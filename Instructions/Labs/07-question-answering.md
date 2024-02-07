@@ -50,7 +50,7 @@ Para usar la respuesta a preguntas, necesita un recurso **Language**.
 1. Si se le pide que elija un recurso de Language, seleccione la configuración siguiente:
     - **Directorio de Azure**: *directorio de Azure que contiene la suscripción*.
     - **Suscripción de Azure**: *su suscripción de Azure*.
-    - **Recurso Language**: *recurso Language creado anteriormente*.
+    - **Recurso de lenguaje**: *el recurso de lenguaje que creó anteriormente.*
 
     Si ***no*** se le pide que elija un recurso de Language, puede deberse a que tiene varios recursos de Language en la suscripción, en cuyo caso:
     1. En la barra de la parte superior de la página, seleccione **Configuración (&#9881;)**.      
@@ -157,8 +157,8 @@ Experimente con el bot. Probablemente observará que el bot puede responder preg
 
 Si no tiene previsto realizar más ejercicios, elimine los recursos que ya no necesite. Esto evita la acumulación de costes innecesarios.
 
-1. Abra el [Azure Portal]( https://portal.azure.com) y seleccione el grupo de recursos que contiene el recurso que creó. 
-1. Seleccione el recurso y seleccione **Eliminar** y, después, **Sí** para confirmar. A continuación, se elimina el recurso.
+1. Abra [Azure Portal]( https://portal.azure.com) y seleccione el grupo de recursos que contenga el recurso que creó. 
+1. Seleccione el recurso y seleccione **Eliminar** y, después, **Sí** para confirmar. A continuación, se eliminará el recurso.
 
 ## Saber más
 
