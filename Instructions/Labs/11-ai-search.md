@@ -183,7 +183,7 @@ Después de tener los documentos en el almacenamiento, puede usar Búsqueda de A
     - Ejecuta el conjunto de aptitudes cognitivas para generar campos más enriquecidos.
     - Asigna los campos extraídos al índice.
 
-1. En la mitad inferior de la página **información general** del recurso de Búsqueda de Azure AI, seleccione la pestaña **Indexadores**. En esta pestaña se muestra el **coffee-indexer** recién creado. Espere un momento y seleccione **&orarr; Actualizar** hasta que el campo **Estado** indique que se ha realizado correctamente.
+1. Vuelva a la página de recursos de Búsqueda de Azure AI. En el panel de la izquierda, en **Administración de búsquedas**, seleccione **Indizadores**. Seleccione el **indizador de café** recién creado. Espere un momento y seleccione **&orarr; Actualizar** hasta que el campo **Estado** indique que se ha realizado correctamente.
 
 1. Seleccione el nombre del indexador para ver más detalles.
 
@@ -197,21 +197,40 @@ Use el explorador de búsqueda para escribir y probar consultas. El Explorador d
 
    ![Captura de pantalla de cómo buscar el Explorador de búsqueda.](media/create-cognitive-search-solution/5-exercise-screenshot-7.png)
 
-1. Observe que el índice seleccionado es *coffee-index* que había creado.
+2. Observe que el índice seleccionado es *coffee-index* que había creado. Debajo del índice seleccionado, cambie la *vista* a **Vista JSON**. 
 
     ![Captura de pantalla del Explorador de búsqueda](media/create-cognitive-search-solution/search-explorer-query.png)
 
-    En el campo **Cadena de consulta**, escriba `search=*&$count=true` y, a continuación, seleccione **Buscar**. La consulta de búsqueda devuelve todos los documentos del índice de búsqueda, incluido un recuento de los documentos en el campo **@odata.count**. El índice de búsqueda debe devolver un documento JSON que contiene los resultados de la búsqueda.
+En el campo **Editor de consultas JSON**, copie y pegue lo siguiente: 
+```json
+{
+    "search": "*",
+    "count": true
+}
+```
+3. Seleccione **Search**. La consulta de búsqueda devuelve todos los documentos del índice de búsqueda, incluido un recuento de los documentos en el campo **@odata.count**. El índice de búsqueda debe devolver un documento JSON que contiene los resultados de la búsqueda.
 
-    > **Nota** Si aparece un elemento **Para buscar en el portal, permita el origen del portal en el mensaje de configuración de CORS de índice**, seleccione **Permitir portal** y, a continuación, seleccione **Buscar**.
+4. Ahora vamos a filtrar por ubicación. En el campo **Editor de consultas JSON**, copie y pegue lo siguiente: 
+```json
+{
+    "search": "locations:'Chicago'",
+    "count": true
+}
+```
+5. Seleccione **Search**. La consulta busca en todos los documentos del índice y filtra las revisiones con una ubicación de Chicago. Debería ver `3` en el campo `@odata.count`.
 
-1. Ahora vamos a filtrar por ubicación. Escriba `search=locations:'Chicago'` en el campo **Cadena de consulta** y, a continuación, seleccione **Buscar**. La consulta busca en todos los documentos del índice y filtra las revisiones con una ubicación de Chicago.
-
-1. Ahora vamos a filtrar por opinión. Escriba `search=sentiment:'negative'` en el campo **Cadena de consulta** y, a continuación, seleccione **Buscar**. La consulta busca en todos los documentos del índice y filtra las revisiones con una opinión negativa.
+6. Ahora vamos a filtrar por opinión. En el campo **Editor de consultas JSON**, copie y pegue lo siguiente: 
+```json
+{
+    "search": "sentiment:'negative'",
+    "count": true
+}
+```
+7. Seleccione **Search**. La consulta busca en todos los documentos del índice y filtra las revisiones con una opinión negativa. Debería ver `1` en el campo `@odata.count`.
 
    > **Nota** Vea cómo los resultados se ordenan por `@search.score`. Se trata de la puntuación que el motor de búsqueda asigna para mostrar la proximidad de los resultados con la consulta en cuestión.
 
-1. Uno de los problemas que quizá queramos resolver es por qué puede haber ciertas opiniones. Echemos un vistazo a las frases clave asociadas a una opinión negativa. ¿Cuál cree que puede ser la causa de la opinión?
+8. Uno de los problemas que quizá queramos resolver es por qué puede haber ciertas opiniones. Echemos un vistazo a las frases clave asociadas a una opinión negativa. ¿Cuál cree que puede ser la causa de la opinión?
 
 ## Revisión del almacén de conocimiento
 
@@ -219,36 +238,36 @@ Veamos el potencial del almacén de conocimientos en acción. Cuando ejecutó el
 
 1. En Azure Portal, vuelva a la cuenta de almacenamiento de Azure.
 
-1. En el panel de menús izquierdo, seleccione **Contenedores**. Seleccione el contenedor **knowledge-store**.
+2. En el panel de menús izquierdo, seleccione **Contenedores**. Seleccione el contenedor **knowledge-store**.
 
     ![Captura de pantalla del contenedor knowledge-store.](media/create-cognitive-search-solution/knowledge-store-blob-0.png)
 
-1. Seleccione cualquiera de los elementos y haga clic en el archivo **objectprojection.json**.
+3. Seleccione cualquiera de los elementos y haga clic en el archivo **objectprojection.json**.
 
     ![Captura de objectprojection.json](media/create-cognitive-search-solution/knowledge-store-blob-1.png)
 
-1. Seleccione **Editar** para ver el archivo JSON generado para uno de los documentos del almacén de datos de Azure.
+4. Seleccione **Editar** para ver el archivo JSON generado para uno de los documentos del almacén de datos de Azure.
 
     ![Captura de pantalla de cómo buscar el botón de edición](media/create-cognitive-search-solution/knowledge-store-blob-2.png)
 
-1. Vuelva a la ruta de navegación de Storage Blob en la parte superior izquierda de la pantalla para volver a la cuenta de almacenamiento *Contenedores*.
+5. Vuelva a la ruta de navegación de Storage Blob en la parte superior izquierda de la pantalla para volver a la cuenta de almacenamiento *Contenedores*.
 
     ![Captura de pantalla de la ruta de navegación del blob de almacenamiento](media/create-cognitive-search-solution/knowledge-store-blob-4.png)
 
-1. En *Contenedores*, seleccione el contenedor *coffee-skillset-image-projection*. Seleccione cualquiera de los elementos.
+6. En *Contenedores*, seleccione el contenedor *coffee-skillset-image-projection*. Seleccione cualquiera de los elementos.
 
     ![Captura de pantalla del contenedor del conjunto de aptitudes](media/create-cognitive-search-solution/knowledge-store-blob-5.png)
 
-1. Seleccione cualquiera de los archivos *.jpg*. Seleccione **Editar** para ver la imagen almacenada del documento. Observe cómo todas las imágenes de los documentos se almacenan de esta manera.
+7. Seleccione cualquiera de los archivos *.jpg*. Seleccione **Editar** para ver la imagen almacenada del documento. Observe cómo todas las imágenes de los documentos se almacenan de esta manera.
 
     ![Captura de pantalla de la imagen guardada.](media/create-cognitive-search-solution/knowledge-store-blob-3.png)
 
-1. Vuelva a la ruta de navegación de Storage Blob en la parte superior izquierda de la pantalla para volver a la cuenta de almacenamiento *Contenedores*.
+8. Vuelva a la ruta de navegación de Storage Blob en la parte superior izquierda de la pantalla para volver a la cuenta de almacenamiento *Contenedores*.
 
-1. Seleccione **Explorador de almacenamiento** en el panel izquierdo y seleccione **Tablas**. Hay una tabla para cada entidad del índice. Seleccione la tabla *coffeeSkillsetKeyPhrases*.
+9. Seleccione **Explorador de almacenamiento** en el panel izquierdo y seleccione **Tablas**. Hay una tabla para cada entidad del índice. Seleccione la tabla *coffeeSkillsetKeyPhrases*.
 
     Eche un vistazo a las frases clave que el almacén de conocimientos pudo capturar del contenido de las opiniones. Muchos de los campos son claves, por lo que puede vincular las tablas como una base de datos relacional. El último campo muestra las frases clave que extrajo el conjunto de aptitudes.
 
 ## Saber más
 
-Este índice de búsqueda simple solo contiene algunas de las funcionalidades del servicio Búsqueda de Azure AI. Para obtener más información sobre lo que puede hacer gracias a este servicio, consulte la [página del servicio Búsqueda de Azure AI](/azure/search/search-what-is-azure-search).
+Este índice de búsqueda simple solo contiene algunas de las funcionalidades del servicio Búsqueda de Azure AI. Para obtener más información sobre lo que puede hacer gracias a este servicio, consulte la [página del servicio Búsqueda de Azure AI](https://learn.microsoft.com/azure/search).
