@@ -29,7 +29,7 @@ En este ejercicio, creará un recurso de Voz de IA, a menos que ya tenga un recu
 
 1. Seleccione [**https://aka.ms/mslearn-speech-files**](https://aka.ms/mslearn-speech-files) para descargar **speech.zip.** Abra la carpeta . 
 
-1. En la página Introducción a Voz, en *Voz* busque *Conversión de voz en texto en tiempo real*. Seleccione **Probar conversión de voz en texto en tiempo real**.
+1. En la página Introducción a Voz, en *Conversión de voz en texto* busque *Conversión de voz en texto en tiempo real*. Seleccione **Probar conversión de voz en texto en tiempo real**.
 
     ![Introducción a Voz](media/recognize-synthesize-speech/try-out-speech-to-text.png)
 
