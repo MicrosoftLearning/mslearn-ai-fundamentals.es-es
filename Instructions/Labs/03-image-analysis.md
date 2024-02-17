@@ -13,7 +13,7 @@ En este ejercicio, usará Studio de Visión para analizar imágenes mediante exp
 
 Es posible usar las funcionalidades de análisis de imágenes de Visión de Azure AI con un recurso de varios servicios de **servicios de Azure AI**. Si aún no lo ha hecho, cree un recurso de **servicios de Azure AI** en la suscripción de Azure.
 
-1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con la cuenta de Microsoft asociada a la suscripción de Azure.
+1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con la cuenta de Microsoft asociada a la suscripción de Azure.
 
 1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
@@ -23,7 +23,7 @@ Es posible usar las funcionalidades de análisis de imágenes de Visión de Azur
     - **Plan de tarifa**: *Estándar S0.*
     - **Al marcar esta casilla, confirmo haber leído y comprendido todos los términos que aparecen a continuación**: *Seleccionado*.
 
-1. Seleccione **Revisar y crear**, a continuación, **Crear**, y espere a que se complete la implementación.
+1. Seleccione **Revisar y crear**, a continuación, **Crear** y espere a que se complete la implementación.
 
 ## Conecte el recurso del servicio Azure AI a Studio de Visión
 
@@ -33,9 +33,9 @@ A continuación, conecte el recurso del servicio Azure AI que aprovisionó anter
 
 1. Inicie sesión con su cuenta y asegúrese de usar el mismo directorio que el mismo donde creó el recurso de servicios de Azure AI.
 
-1. En la página principal de Studio de Visión, seleccione **Ver todos los recursos** en el encabezado **Introducción a Visión**.
+1. En la página principal de Vision Studio, seleccione **Ver todos los recursos** en el encabezado **Introducción a Visión**.
 
-    ![El vínculo del recurso Ver todo está resaltado en Introducción a Vision en Studio de Visión.](./media/analyze-images-vision/vision-resources.png)
+    ![El vínculo del recurso Ver todo está resaltado en Introducción a Visión en Vision Studio.](./media/analyze-images-vision/vision-resources.png)
 
 1. En la página **Seleccione un recurso con el que trabajar**, mantenga el cursor del mouse sobre el recurso que creó anteriormente en la lista y active la casilla situada a la izquierda del nombre del recurso. A continuación, seleccione **Seleccionar como recurso predeterminado**.
 
@@ -122,7 +122,7 @@ En esta tarea, se usa la característica **Detección de objetos** de Análisis 
 Si no tiene previsto realizar más ejercicios, elimine los recursos que ya no necesite. Esto evita la acumulación de costes innecesarios.
 
 1.  Abra [Azure Portal]( https://portal.azure.com) y seleccione el grupo de recursos que contenga el recurso que creó. 
-1.  Seleccione el recurso, seleccione **Eliminar** y, a continuación, **Sí** para confirmar. A continuación, se eliminará el recurso.
+1.  Seleccione el recurso y seleccione **Eliminar** y, después, **Sí** para confirmar. A continuación, se eliminará el recurso.
 
 ## Saber más
 

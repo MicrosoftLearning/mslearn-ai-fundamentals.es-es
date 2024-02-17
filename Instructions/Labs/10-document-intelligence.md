@@ -36,7 +36,7 @@ Mantenga abierto Document Intelligence Studio.
 Ahora está listo para analizar un recibo de la empresa minorista ficticia Northwind Traders.
 
 1. Seleccione [**https://aka.ms/mslearn-receipt**](https://aka.ms/mslearn-receipt) para descargar un documento de ejemplo en el equipo. Abra la carpeta . 
-1. Seleccione **Form Recognizer Studio** para volver a la página **Introducción a Document Intelligence Studio** y, en Recibos, seleccione **Probar.**
+1. Seleccione **Document Intelligence Studio** para volver a la página **Introducción a Document Intelligence Studio** y, en Recibos, seleccione **Probar**.
 1. En la lista desplegable Precompilado, asegúrese de que la opción **Recibos** está seleccionada.
 1. Seleccione **Buscar archivos** y vaya a la carpeta donde guardó la imagen. Seleccione la imagen del recibo y, a continuación **Abrir**. La imagen aparece en el lado izquierdo de la pantalla.
 
@@ -52,7 +52,7 @@ En este ejercicio ha usado Document Intelligence Studio para crear un recurso de
 Si no tiene previsto realizar más ejercicios, elimine los recursos que ya no necesite. Esto evita la acumulación de costes innecesarios.
 
 1. Abra [Azure Portal]( https://portal.azure.com) y seleccione el grupo de recursos que contenga el recurso que creó.
-1. Seleccione el recurso, seleccione **Eliminar** y, a continuación, **Sí** para confirmar. A continuación, se eliminará el recurso.
+1. Seleccione el recurso y seleccione **Eliminar** y, después, **Sí** para confirmar. A continuación, se eliminará el recurso.
 
 ## Saber más
 
