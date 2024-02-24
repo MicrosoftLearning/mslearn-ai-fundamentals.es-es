@@ -23,17 +23,17 @@ Puede usar el servicio Face de Azure AI con un recurso de varios servicios, com
     - **Plan de tarifa**: *Estándar S0.*
     - **Al marcar esta casilla, confirmo haber leído y comprendido todos los términos que aparecen a continuación**: *Seleccionado*.
 
-1. Seleccione **Revisar y crear**, a continuación, **Crear**, y espere a que se complete la implementación.
+1. Seleccione **Revisar y crear**, a continuación, **Crear** y espere a que se complete la implementación.
 
-## Conexión del recurso del servicio Azure AI a Vision Studio
+## Conecte el recurso del servicio de Azure AI a Vision Studio
 
-Después, conecte el recurso de servicios de Azure AI que aprovisionó anteriormente en Vision Studio.
+A continuación, conecte el recurso del servicio de Azure AI que aprovisionó anteriormente a Vision Studio.
 
 1. En otra pestaña del explorador, vaya a **Vision Studio** en [https://portal.vision.cognitive.azure.com](https://portal.vision.cognitive.azure.com?azure-portal=true).
 
-1. Inicie sesión con su cuenta y asegúrese de usar el mismo directorio que el mismo donde ha creado el recurso de servicios de Azure AI.
+1. Inicie sesión con su cuenta y asegúrese de usar el mismo directorio que el que usó al crear el recurso para los servicios de Azure AI.
 
-1. En la página principal de Vision Studio, seleccione **Ver todos los recursos** en el encabezado **Introducción a Vision**.
+1. En la página principal de Vision Studio, seleccione **Ver todos los recursos** en el encabezado **Introducción a Visión**.
 
     ![El vínculo del recurso Ver todo está resaltado en Introducción a Visión en Vision Studio.](./media/analyze-images-vision/vision-resources.png)
 
@@ -73,7 +73,7 @@ Después, conecte el recurso de servicios de Azure AI que aprovisionó anterior
 
     ![Una imagen de la gente en una tienda con una planta ocultando una cara.](./media/create-face-solutions/store-camera-3.jpg)
 
-1. Cargue **store-camera-2.jpg** y revise los detalles de detección de caras que se devuelven. Observe cómo Face de Azure AI puede detectar caras parcialmente ocultas. 
+1. Cargue **store-camera-3.jpg** y revise los detalles de detección de caras que se devuelven. Observe cómo Azure AI Face no ha detectado la cara oculta.
 
 En este ejercicio, ha explorado cómo los servicios de Azure AI pueden detectar caras en imágenes. Si tiene tiempo, no dude en probar las imágenes de ejemplo o algunas de sus propias imágenes.
 
