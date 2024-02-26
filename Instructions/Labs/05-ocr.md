@@ -61,7 +61,7 @@ A continuación, conecte el recurso del servicio de Azure AI que aprovisionó an
     - En **Atributos detectados**, cualquier texto encontrado en la imagen se organiza en una estructura jerárquica de regiones, líneas y palabras.
     - En la imagen, la ubicación del texto se indica mediante un cuadro de límite, como se muestra aquí:
 
-    ![Imagen del texto de la imagen descrita](media/read-text-computer-vision/text-bounding-boxes.png)
+    ![Imagen del texto de la imagen contorneada.](media/read-text-computer-vision/advert-bounding-boxes.jpg)
 
 1. Ahora puede probar otra imagen. Seleccione **Buscar archivo** y vaya a la carpeta donde guardó los archivos desde GitHub. Seleccione **letter.jpg**.
 
