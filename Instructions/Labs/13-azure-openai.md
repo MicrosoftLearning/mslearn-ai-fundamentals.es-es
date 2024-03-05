@@ -26,9 +26,12 @@ Para poder usar modelos de Azure OpenAI, debe aprovisionar un recurso de Azure O
 2. Cree un recurso de **Azure OpenAI** con la siguiente configuración:
     - **Suscripción**: *Una suscripción de Azure aprobada para acceder al servicio Azure OpenAI.*
     - **Grupo de recursos**: *Elija un grupo de recursos existente o cree uno nuevo con un nombre de su elección.*
-    - **Región**: *elija cualquier región disponible*.
-    - **Nombre**: *Un nombre único de su elección.*
+    - **Región**: Este de EE. UU.\*
+    - **Nombre**: *nombre único que prefiera*
     - **Plan de tarifa**: estándar S0
+
+    > \* Las distintas regiones tienen una disponibilidad y cuota diferentes para los modelos. En este ejercicio, usará un modelo GPT-35-Turbo para la generación de texto y un modelo DALL-E para la generación de imágenes, ambos son admitidos en el este de EE. UU. 
+
 3. Espere a que la implementación finalice. A continuación, vaya al recurso de Azure OpenAI implementado en Azure Portal.
 
 ## Exploración de Azure OpenAI Studio
@@ -58,6 +61,13 @@ Para experimentar con la generación de lenguaje natural, primero debe implement
     - **Modelo**: gpt-35-turbo
     - **Versión de Modev**: actualización automática al valor predeterminado.
     - **Nombre de implementación**: *Un nombre único para la implementación de modelo*
+    - **Opciones avanzadas**
+        - **Filtro de contenido**: valor predeterminado
+        - **Tipo de implementación**: Estándar
+        - **Límite de velocidad de tokens por minuto**: 5000\*
+        - **Habilitación de la cuota dinámica**: habilitado
+
+    > \* Un límite de velocidad de 5000 tokens por minuto es más que adecuado para completar este ejercicio, al tiempo que deja capacidad para otras personas que usan la misma suscripción.
 
 ## Uso del área de juegos de *Chat* para trabajar con el modelo
 
