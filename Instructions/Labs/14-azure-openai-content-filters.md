@@ -26,9 +26,22 @@ Para poder usar modelos de Azure OpenAI, debe aprovisionar un recurso de Azure O
 2. Cree un recurso de **Azure OpenAI** con la siguiente configuración:
     - **Suscripción**: *Una suscripción de Azure aprobada para acceder al servicio Azure OpenAI.*
     - **Grupo de recursos**: *Elija un grupo de recursos existente o cree uno nuevo con un nombre de su elección.*
-    - **Región**: *elija cualquier región disponible*.
-    - **Nombre**: *Un nombre único de su elección.*
+    - **Región**: *Elija de forma **aleatoria** cualquiera de las siguientes regiones*\*
+        - Este de Australia
+        - Este de Canadá
+        - Este de EE. UU.
+        - Este de EE. UU. 2
+        - Centro de Francia
+        - Japón Oriental
+        - Centro-Norte de EE. UU
+        - Centro de Suecia
+        - Norte de Suiza
+        - Sur de Reino Unido 2
+    - **Nombre**: *nombre único que prefiera*
     - **Plan de tarifa**: estándar S0
+
+    > \* Los recursos de Azure OpenAI están restringidos por cuotas regionales. Las regiones enumeradas incluyen la cuota predeterminada para los tipos de modelo usados en este ejercicio. Elegir aleatoriamente una región reduce el riesgo de que una sola región alcance su límite de cuota en escenarios en los que se comparte una suscripción con otros usuarios. En caso de que se alcance un límite de cuota más adelante en el ejercicio, es posible que tenga que crear otro recurso en otra región.
+
 3. Espere a que la implementación finalice. Luego, vaya al recurso de Azure OpenAI implementado en Azure Portal.
 
 ## Implementar un modelo
@@ -39,7 +52,14 @@ Ahora está listo para implementar un modelo para usarlo a través de **Azure Op
 2. En Azure OpenAI Studio, cree una nueva implementación con la siguiente configuración:
     - **Modelo**: gpt-35-turbo
     - **Versión de Modev**: actualización automática al valor predeterminado.
-    - **Nombre de implementación**: 35turbo
+    - **Nombre de implementación**: *nombre único que prefieras*
+    - **Opciones avanzadas**
+        - **Filtro de contenido**: valor predeterminado
+        - **Tipo de implementación**: Estándar
+        - **Límite de velocidad de tokens por minuto**: 5000\*
+        - **Habilitación de la cuota dinámica**: habilitado
+
+    > \* Un límite de velocidad de 5000 tokens por minuto es más que adecuado para completar este ejercicio, al tiempo que deja capacidad para otras personas que usan la misma suscripción.
 
 > **Nota**: Cada modelo de Azure OpenAI está optimizado para lograr un equilibrio diferente de funcionalidad y rendimiento. Usaremos el modelo de **GPT 3.5 Turbo** en este ejercicio, que es altamente capaz de la generación de lenguaje natural y escenarios de chat.
 
