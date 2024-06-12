@@ -36,7 +36,7 @@ La solución que va a crear para Fourth Coffee requiere los siguientes recursos 
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
     - **Nombre de servicio**: *un nombre único*.
-    - **Ubicación**: *elija cualquier región disponible*.
+    - **Ubicación**: *Elija cualquier región disponible. Si está en el este de EE. UU., use "Este de EE. UU. 2"*.
     - **Plan de tarifa**: básico
 
 1. Seleccione **Revisar y crear** y, después de ver la respuesta **Validación correcta**, seleccione **Crear**.

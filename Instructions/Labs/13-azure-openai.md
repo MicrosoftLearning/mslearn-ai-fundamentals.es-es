@@ -30,7 +30,7 @@ Para poder usar modelos de Azure OpenAI, debe aprovisionar un recurso de Azure O
     - **Nombre**: *nombre único que prefiera*
     - **Plan de tarifa**: estándar S0
 
-    > \* Las distintas regiones tienen una disponibilidad y cuota diferentes para los modelos. En este ejercicio, usará un modelo GPT-35-Turbo para la generación de texto y un modelo DALL-E para la generación de imágenes, ambos son admitidos en el este de EE. UU. 
+    > \* Las distintas regiones tienen una disponibilidad y cuota diferentes para los modelos. En este ejercicio, usará un modelo GPT-35-Turbo para la generación de texto y un modelo DALL-E para la generación de imágenes, ambos son admitidos en el este de EE. UU.
 
 3. Espere a que la implementación finalice. A continuación, vaya al recurso de Azure OpenAI implementado en Azure Portal.
 

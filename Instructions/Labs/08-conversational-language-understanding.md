@@ -20,7 +20,7 @@ Puede usar muchas características de Lenguaje de Azure AI con un recurso de **
 1. En la página **Crear lenguaje**, configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
-    - **Región**: Este de EE. UU.
+    - **Región**: *Seleccione la región geográfica más cercana. Si está en el este de EE. UU., use "Este de EE. UU. 2"*.
     - **Nombre**: *escriba un nombre único*.
     - **Plan de tarifa**: *F0 o S gratis si F0 no está disponible*
     - **Al marcar esta casilla, confirmo haber leído y comprendido todos los términos que aparecen a continuación**: *Seleccionado*.
