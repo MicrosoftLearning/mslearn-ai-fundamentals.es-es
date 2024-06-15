@@ -18,7 +18,7 @@ Es posible usar las funcionalidades de OCR de Visión de Azure AI con un recurso
 1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
-    - **Región**: Este de EE. UU.
+    - **Región**: *Seleccione la región geográfica más cercana. Si está en el este de EE. UU., use "Este de EE. UU. 2"*.
     - **Nombre**: *escriba un nombre único*.
     - **Plan de tarifa**: *Estándar S0.*
     - **Al marcar esta casilla, confirmo haber leído y comprendido todos los términos que aparecen a continuación**: *Seleccionado*.

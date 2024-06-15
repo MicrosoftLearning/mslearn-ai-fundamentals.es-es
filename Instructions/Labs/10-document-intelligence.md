@@ -23,7 +23,7 @@ Puede usar Documento de inteligencia de Azure AI mediante la creación de un rec
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
     - **Nuevo nombre de recurso**: *escriba un nombre único*.
-    - **Ubicación**: *Seleccione una región*.
+    - **Ubicación**: *Seleccione una región. Si está en el este de EE. UU., use "Este de EE. UU. 2"*.
     - **Plan de tarifa**: *FO gratis (si está disponible; de lo contrario, seleccione SO estándar)*.
 1. Seleccione **Continuar** y, a continuación, **Finalizar**. Espere a que se implemente el recurso.
 
@@ -40,7 +40,7 @@ Ahora está listo para analizar un recibo de la empresa minorista ficticia North
 1. En la lista desplegable Precompilado, asegúrese de que la opción **Recibos** está seleccionada.
 1. Seleccione **Buscar archivos** y vaya a la carpeta donde guardó la imagen. Seleccione la imagen del recibo y, a continuación **Abrir**. La imagen aparece en el lado izquierdo de la pantalla.
 
-    ![Recibo de Northwind.](media/document-intelligence/northwind-receipt.jpg)
+    ![Captura de pantalla de un recibo de northwind.](media/document-intelligence/receipt.jpg)
 
 1. A la derecha, seleccione **Ejecutar análisis**.
 1. Cuando se ejecuta el análisis, se devuelven los resultados. Observe que el servicio ha reconocido campos de datos específicos, como el nombre del comerciante, la dirección, el número de teléfono y la fecha y hora de la transacción, así como las líneas de pedido, el subtotal, los impuestos y los importes totales. Junto a cada campo hay una probabilidad porcentual de que el campo sea correcto.
