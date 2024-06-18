@@ -29,28 +29,28 @@ Antes de usar Studio, es necesario asociar un recurso de servicios de Azure AI 
 
 ![Captura de pantalla del icono de Configuración en la parte superior derecha de la pantalla, junto a la campana, el signo de interrogación y los iconos de sonrisa.](./media/content-safety/settings-toggle.png)
 
-1. En la página **Configuración**, verá una pestaña *Directorio* y una pestaña *Recurso*. En la pestaña *Recurso*, seleccione **Crear un nuevo recurso**. Esto le llevará a la página para crear un recurso en Azure Portal.
+2. En la página **Configuración**, verá una pestaña *Directorio* y una pestaña *Recurso*. En la pestaña *Recurso*, seleccione **Crear un nuevo recurso**. Esto le llevará a la página para crear un recurso en Azure Portal.
 
 > **Tenga en cuenta** que la pestaña *Directorio* permite a los usuarios seleccionar directorios diferentes desde los que podrá crear recursos. No es necesario cambiar la configuración a menos que se desee usar otro directorio. 
 
 ![Captura de pantalla de dónde seleccionar la creación de un nuevo recurso en la página de configuración de Content Safety Studio.](./media/content-safety/create-new-resource-from-studio.png)
 
-1. En la página *Crear Content Safety* de [Azure Portal](https://portal.azure.com?auzre-portal=true), se deben configurar varios detalles para crear el recurso. Configúrelo con los valores siguientes:
+3. En la página *Crear Content Safety* de [Azure Portal](https://portal.azure.com?azure-portal=true), se deben configurar varios detalles para crear el recurso. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
-    - **Región**: *elija cualquier región disponible*.
+    - **Región**: *Elija cualquier región disponible. Si está en el este de EE. UU., use "Este de EE. UU. 2"*.
     - **Nombre**: *escriba un nombre único*.
     - **Plan de tarifa**: F0 gratis.
 
-1. Seleccione **Revisar y crear** y revise la configuración. Seleccione **Crear**. La pantalla indicará cuándo se ha completado la implementación. 
+4. Seleccione **Revisar y crear** y revise la configuración. Seleccione **Crear**. La pantalla indicará cuándo se ha completado la implementación. 
 
 *¡Felicidades! Acaba de crear o aprovisionar un recurso de servicios de Azure AI. Particularmente, el que ha aprovisionado es un recurso de Content Safety de un solo servicio.*
 
-1. Cuando finalice la implementación, abra una nueva pestaña y vuelva a [Content Safety Studio](https://contentsafety.cognitive.azure.com?azure-portal=true). 
+5. Cuando finalice la implementación, abra una nueva pestaña y vuelva a [Content Safety Studio](https://contentsafety.cognitive.azure.com?azure-portal=true). 
 
-1. Vuelva a seleccionar el icono **Configuración** en la parte superior derecha de la pantalla. Esta vez debería ver que el recurso recién creado se ha agregado a la lista.  
+6. Vuelva a seleccionar el icono **Configuración** en la parte superior derecha de la pantalla. Esta vez debería ver que el recurso recién creado se ha agregado a la lista.  
 
-1. En la página Configuración de Content Safety Studio, seleccione el recurso del servicio de Azure AI que acaba de crear y haga clic en **Usar recurso** en la parte inferior de la pantalla. Volverá a la página principal de Studio. Ya se puede empezar a usar Studio con el recurso recién creado.
+7. En la página Configuración de Content Safety Studio, seleccione el recurso del servicio de Azure AI que acaba de crear y haga clic en **Usar recurso** en la parte inferior de la pantalla. Volverá a la página principal de Studio. Ya se puede empezar a usar Studio con el recurso recién creado.
 
 ## Probar la moderación de texto en Content Safety Studio
 

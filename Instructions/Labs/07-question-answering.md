@@ -31,7 +31,7 @@ Para usar la respuesta a preguntas, necesita un recurso **Language**.
         - **Suscripción**: *su suscripción a Azure*.
         - **Grupo de recursos**: *seleccione un grupo de recursos existente o cree uno*.
     - **Detalles de instancia**
-        - **Región**: *Seleccione una región*      
+        - **Región**: *Seleccione una región. Si está en el este de EE. UU., use "Este de EE. UU. 2"*      
         - **Nombre**: *un nombre único para el recurso de Language*.
         - **Plan de tarifa**: S (llamadas de 1K por minuto)
     - **Responder preguntas personalizada**
