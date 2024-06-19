@@ -50,7 +50,35 @@ Antes de usar Studio, es necesario asociar un recurso de servicios de Azure AI 
 
 6. Vuelva a seleccionar el icono **Configuración** en la parte superior derecha de la pantalla. Esta vez debería ver que el recurso recién creado se ha agregado a la lista.  
 
-7. En la página Configuración de Content Safety Studio, seleccione el recurso del servicio de Azure AI que acaba de crear y haga clic en **Usar recurso** en la parte inferior de la pantalla. Volverá a la página principal de Studio. Ya se puede empezar a usar Studio con el recurso recién creado.
+>**Nota**: Si usa una suscripción a Cloud Slice, puede omitir los pasos 7-12 e ir al paso 13. Si no usa ninguna, continúe con el paso 7.
+
+7. Seleccione **Ver todas las propiedades en Azure Portal** en la parte inferior de la pantalla *Configuración*. 
+
+![Captura de pantalla del vínculo Ver todas las propiedades en Azure Portal.](./media/content-safety/view-all-properties.png)
+
+8. En Azure Portal, seleccione el recurso *Content Safety* que acaba de crear. Después, en el panel de la izquierda, seleccione **Control de acceso (IAM)**. A continuación, en el panel abierto, seleccione **Agregar** junto al signo más y seleccione **Agregar asignación de roles**. 
+
+![Captura de pantalla de dónde seleccionar la opción Agregar asignación de roles en el panel Control de acceso.](./media/content-safety/access-control-step-one.png)
+
+9. Busque la opción **Usuario de Cognitive Services** en la lista de roles y selecciónela. Luego, seleccione **Siguiente**. 
+
+10. Use la siguiente configuración para asignar el rol a su propio usuario: 
+    - **Asignar acceso a**: seleccione el *usuario, el grupo o la entidad de servicio*.
+    - **Miembros**: haga clic en *Seleccionar miembros*.
+        - En el panel *Seleccionar miembros* abierto, busque su nombre. Haga clic en el ícono más que hay al lado de su nombre. Después, haga clic en **Seleccionar**.
+    - **Descripción**: *déjela en blanco*
+
+11. Seleccione **Revisar y asignar** y, a continuación, seleccione **Revisar y asignar** de nuevo para agregar la asignación de roles.    
+
+12. Vuelva a Content Safety Studio en [https://contentsafety.cognitive.azure.com](https://contentsafety.cognitive.azure.com). Después, seleccione el icono **Configuración** de la parte superior derecha de la pantalla. 
+
+![Captura de pantalla del icono de Configuración en la parte superior derecha de la pantalla, junto a la campana, el signo de interrogación y los iconos de sonrisa.](./media/content-safety/settings-toggle.png)
+ 
+13. Seleccione el recurso del servicio de Azure AI que acaba de crear. Asegúrese de que en *Asignaciones de roles actuales* vea tanto *Usuario de Cognitive Services* como *propietario*.
+
+![Captura de pantalla de las asignaciones de roles actuales.](./media/content-safety/access-control-check-step.png)
+
+14. Haga clic en **Usar recurso** en la parte inferior de la pantalla. Volverá a la página principal de Studio. Ya se puede empezar a usar Studio con el recurso recién creado.
 
 ## Probar la moderación de texto en Content Safety Studio
 
