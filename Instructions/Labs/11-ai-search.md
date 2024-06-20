@@ -124,7 +124,7 @@ Después de tener los documentos en el almacenamiento, puede usar Búsqueda de A
 
 1. Seleccione **Siguiente: Agregar conocimientos cognitivos (opcional)**.
 
-1. En la sección **Adjuntar Cognitive Services**, seleccione el recurso de servicios de Azure AI.  
+1. En la sección **Adjuntar servicios de IA**, seleccione su recurso de Servicios de Azure AI.  
 
 1. En la sección **Agregar enriquecimientos**, haga lo siguiente:
     - Cambie el **nombre del conjunto de aptitudes** a **conjunto de aptitudes-café**.
@@ -152,11 +152,12 @@ Después de tener los documentos en el almacenamiento, puede usar Búsqueda de A
     - Detalles de la imagen
     - Image references (Referencias de la imagen)
 
-    > **Nota** Si aparece una advertencia que solicita una **Cadena de conexión de cuenta de almacenamiento**.
+    > **Nota** Aparece una advertencia que solicita una **cadena de conexión de cuenta de almacenamiento**.
     >
     > ![Captura de pantalla que muestra la advertencia de la pantalla de conexión de la cuenta de almacenamiento, con la opción "Elegir una conexión existente" seleccionada.](media/create-cognitive-search-solution/6a-azure-cognitive-search-enrichments-warning.png)
     >
-    > 1. Seleccione **Elegir una conexión existente**. Elija la cuenta de almacenamiento creada anteriormente.
+
+1. Seleccione **Elegir una conexión existente**. Elija la cuenta de almacenamiento creada anteriormente.
     > 1. Haga clic en **+ Contenedor** para crear un contenedor denominado **knowledge-store** con el nivel de privacidad establecido en **Privado** y seleccione **Crear**.
     > 1. Seleccione el contenedor **knowledge-store** y haga clic en **Seleccionar** en la parte inferior de la pantalla.
 
@@ -166,7 +167,7 @@ Después de tener los documentos en el almacenamiento, puede usar Búsqueda de A
 
 1. Asegúrese de que el campo **Clave** está establecido en **metadata_storage_path**. Deje **Nombre del proveedor de sugerencias** en blanco y **Modo de búsqueda** con el valor que se rellena automáticamente.
 
-1. Revise la configuración predeterminada de los campos del índice. Seleccione **Filtrable** para todos los campos que ya están seleccionados de manera predeterminada.
+1. Revise la configuración predeterminada de los campos del índice. Seleccione **Filtrable** para todos los campos que ya están seleccionados de manera predeterminada. Los nombres de campo que deben marcarse como *filtrables* incluyen: contenido, ubicaciones, frases clave, opinión, merged_content, texto, layoutText, imageTags, imageCaption.
 
     ![Captura de pantalla que muestra el panel para personalizar el índice, con el nombre de índice y la opción "Filtrable" seleccionados para un campo de índice predeterminado.](media/create-cognitive-search-solution/6a-azure-cognitive-search-customize-index.png)
 
@@ -238,11 +239,11 @@ Veamos el potencial del almacén de conocimientos en acción. Cuando ejecutó el
 
 1. En Azure Portal, vuelva a la cuenta de almacenamiento de Azure.
 
-2. En el panel de menús izquierdo, seleccione **Contenedores**. Seleccione el contenedor **knowledge-store**.
+2. En el panel de menús izquierdo, seleccione **Contenedores**. Seleccione el contenedor **knowledge-store**. 
 
     ![Captura de pantalla del contenedor knowledge-store.](media/create-cognitive-search-solution/knowledge-store-blob-0.png)
 
-3. Seleccione cualquiera de los elementos y haga clic en el archivo **objectprojection.json**.
+3. Verá una lista de carpetas. Hay una carpeta para todos los metadatos de cada documento de revisión. **Seleccione cualquiera de las carpetas**. En la carpeta, haga clic en el archivo **objectprojection.json**.
 
     ![Captura de objectprojection.json](media/create-cognitive-search-solution/knowledge-store-blob-1.png)
 
