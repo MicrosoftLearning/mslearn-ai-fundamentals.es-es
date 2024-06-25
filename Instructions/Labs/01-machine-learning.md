@@ -9,6 +9,8 @@ En este ejercicio, usará la característica de aprendizaje automático automati
 
 Este ejercicio debería tardar en completarse **30** minutos aproximadamente.
 
+>**Importante** En este momento, es posible crear e implementar un modelo como servicio web en Estudio de Azure Machine Learning, pero no probarlo en Studio. Por lo tanto, todas las secciones de pasos, excepto la última, antes de realizar la limpieza son posibles. Se actualizará a medida que cambie.
+
 ## Creación de un área de trabajo de Azure Machine Learning
 
 Para usar Azure Machine Learning, debe aprovisionar un área de trabajo de Azure Machine Learning en su suscripción de Azure. Tras haberlo hecho, podrá usar el Estudio de Azure Machine Learning para trabajar con los recursos del área de trabajo.
@@ -140,6 +142,8 @@ Una vez completado el trabajo de aprendizaje automático automatizado, puede rev
 1. Espere a que el **estado de implementación** cambie a *Realizado correctamente*. Esto podría tardar de 5 a 10 minutos.
 
 ## Prueba del modelo implementado
+
+>**Importante** Actualmente, Estudio de Azure Machine Learning no admite el tipo de creación de conjuntos de datos necesario para usar las pruebas de implementación. Le actualizaremos cuando haya una resolución. 
 
 Ahora puede probar el servicio implementado.
 

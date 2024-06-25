@@ -16,6 +16,6 @@ El subconjunto de laboratorios de AI-900 usado en este curso está asignado a ca
 | AI-900 Computer Vision | Análisis de imágenes en Vision Studio | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2250145) |
 | Procesamiento del lenguaje natural de AI-900 | Análisis de texto con Studio de Lenguaje | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2250314) |
 | Documento de inteligencia de AI-900 | Extracción de datos de formulario en Studio de Documento de inteligencia | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2250315) |
-| IA generativa de AI-900 | Explorar la IA generativa con Bing Copilot | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2249955) |
+| IA generativa de AI-900 | Explorar Microsoft Copilot en Microsoft Edge | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2249955) |
 
 

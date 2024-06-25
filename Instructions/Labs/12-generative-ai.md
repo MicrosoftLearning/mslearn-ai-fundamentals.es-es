@@ -1,53 +1,156 @@
 ---
 lab:
-  title: "Exploración de la inteligencia artificial generativa con Microsoft\_Copilot"
+  title: "Explorar Copilot en Microsoft\_Edge"
 ---
-# Exploración de la inteligencia artificial generativa con Microsoft Copilot
+# Explorar Microsoft Copilot en Microsoft Edge
 
-En este ejercicio, explorará la inteligencia artificial generativa con Microsoft Copilot. 
+En este ejercicio, explorará algunas de las formas en que Microsoft Copilot puede usar la IA generativa para ayudarle a ser más productivo al crear contenido nuevo. En el escenario de este ejercicio, empezará con algunas notas de alto nivel para una idea empresarial y usará Copilot en Microsoft Edge para ayudarle a desarrollar un plan de negocio y una presentación para posibles inversores.
 
-## Inicio de sesión en Microsoft Copilot
+Este ejercicio debería tardar en completarse **40** minutos aproximadamente.
 
-1. Abra [copilot.microsoft.com](https://copilot.microsoft.com?azure-portal=true) e inicie sesión con su cuenta personal de Microsoft.
+> **Nota**: En este ejercicio, se supone que tiene una [cuenta de Microsoft personal](https://signup.live.com) (por ejemplo, una cuenta de outlook.com) con la que ha iniciado sesión en [Microsoft Edge](https://www.microsoft.com/edge/download) en el equipo.
 
-1. Microsoft Copilot usa inteligencia artificial generativa para mejorar los resultados de búsqueda de Bing. Esto significa que, a diferencia de la búsqueda sola, que devuelve contenidos existentes, Microsoft Copilot puede elaborar nuevas respuestas basadas en el modelado del lenguaje natural y en la información de la web.  
+## Uso de Copilot para explorar un documento e investigar una idea
 
-1. Hacia la parte inferior de la pantalla, verá una ventana **Preguntarme cualquier cosa**. Cuando escriba solicitudes en la ventana, Copilot usa todo el subproceso de conversación para devolver respuestas. Por ejemplo, vamos a intentar formular una serie de preguntas sobre viajes.
+Para iniciar la exploración de la IA generativa, vamos a usar Microsoft Copilot en Edge para examinar un documento existente y extraer información de ella.
 
-## Usar solicitudes para generar respuestas
+1. En Microsoft Edge, vaya a [OneDrive](https://onedrive.live.com) en `https://onedrive.live.com` e inicie sesión con su cuenta de Microsoft personal. Una vez ahí, cierre los mensajes de bienvenida o las ofertas que se muestran.
+1. En otra pestaña del explorador, abra el documento [Business Idea.docx](https://github.com/MicrosoftLearning/mslearn-ai-fundamentals/raw/main/data/generative-ai/Business%20Idea.docx) desde `https://github.com/MicrosoftLearning/mslearn-ai-fundamentals/raw/main/data/generative-ai/Business%20Idea.docx`. A continuación, cuando el documento se abra en Edge, seleccione la opción **Guardar una copia en OneDrive** y guarde el documento en la carpeta **Documentos** de OneDrive. A continuación, el documento debe abrirse automáticamente en Microsoft Word Online.
 
-1. Escriba una solicitud: `What are 3 pros and cons of traveling in the winter?`. Verá que aparecen las opciones *Buscar:...* y *Generar...* antes de la respuesta. El modelo usa las respuestas buscadas como información de base para generar respuestas originales. Observe que el final de la respuesta contiene vínculos a sus orígenes. 
+    > **Sugerencia**: Si no ve la opción de guardar una copia del archivo en OneDrive, descárguelo en el equipo local. A continuación, en OneDrive, abra la carpeta **Documentos** y use el botón **+ Agregar nuevo** para cargar el archivo **Business Idea.docx** desde el equipo local a OneDrive.
 
-![Captura de pantalla de la respuesta de Copilot a una solicitud de viaje con tres viñetas para las ventajas y tres viñetas para los inconvenientes.](./media/generative-ai/bing-copilot-response-traveling.png) 
+1. Vea el texto de **Business Idea.docx**, que describe algunas ideas de alto nivel para un negocio de limpieza en la ciudad de Nueva York.
+1. Use el icono de **Copilot** en la barra de herramientas de Edge para abrir el panel Copilot, como se muestra aquí:
 
-> **Nota**: si no ve un mensaje **Generar...* o una respuesta de lista de viñetas, aún no ha visto Copilot en acción. Debe volver al menú de inicio de sesión y conectar la cuenta actual que usa con una cuenta personal. 
- 
-1. Escriba una solicitud: `Find me 3 more pros`. Lo que significa con este mensaje es que le gustaría ver 3 razones más positivas para viajar en el invierno que aún no se han enumerado. Tenga en cuenta que, con esta solicitud, está pidiendo a Copilot que haga dos cosas que la búsqueda por sí sola no hace: utilizar la respuesta del chat anterior para excluir lo que se devuelve en la nueva respuesta y utilizar el tema del chat anterior sin indicarlo explícitamente. 
+    ![Captura de pantalla del panel Copilot en Microsoft Edge.](./media/generative-ai/edge-copilot.png)
 
-1. Escriba una solicitud: `Where are 3 places I can go to find fewer crowds?`. 
+1. En el panel Copilot, desplácese hacia abajo para ver todo el contenido según sea necesario y asegúrese de que la pestaña **Chat** esté seleccionada y de que el estilo conversacional esté establecido en **Más equilibrado**, lo que garantizará que Copilot responda con un equilibrio de creatividad y precisión fáctica.
+1. En el cuadro de chat de la parte inferior del panel Copilot, escriba la siguiente indicación:
 
-    > **Nota**: tenga en cuenta que aunque Copilot es capaz de dar una respuesta relacionada, puede eliminar "recuerdos" anteriores del hilo de conversación a medida que continúa. Como resultado, es posible que las respuestas que obtenga no estén directamente relacionadas con viajar en invierno. Esto se debe en gran medida a las limitaciones de entrada de tokens. Cuando el chat "recuerda" partes anteriores de una conversación, es porque ha guardado una cierta cantidad de tokens de la conversación. A medida que se introduzcan nuevos tokens a través de sus nuevas solicitudes y respuestas, el chat dejará de usar los tokens más antiguos. 
+    ```
+    What is this document about?
+    ```
 
-1. El botón **Nuevo tema** situado junto a la ventana de chat es útil. Al hacer clic en él, se borra el subproceso de conversación anterior para que las nuevas respuestas del tema no se basen en el tema anterior. Utilice el icono **Nuevo tema** situado junto a la ventana de chat para borrar el historial de mensajes. 
+    Si se le solicita, confirme que desea permitir que Copilot acceda a la página.
 
-## Probar la generación de imágenes
+1. Revise la respuesta de Copilot, que debe resumir los puntos principales del documento, como se muestra aquí:
 
-1. Ahora veamos un ejemplo de generación de imágenes. Escriba una solicitud: `Create an image of an elephant eating a hamburger`. Observe que aparece un mensaje *Voy a intentar crear eso...* antes de que Copilot devuelva una respuesta. 
+    ![Captura de pantalla del panel Copilot con una respuesta.](./media/generative-ai/copilot-response.png)
 
-    ![Captura de pantalla de elefantes comiendo hamburguesas.](./media/generative-ai/dall-e-elephant.png)
+    > **Nota**: La respuesta específica puede variar.
 
-    Es importante observar que la respuesta puede parecerse, pero no ser la misma. Esto se debe a que las respuestas son variadas.  
+1. Escriba lo siguiente:
 
-1. En la respuesta, hay texto en la parte inferior que dice "Con tecnología de DALL-E". Tenga en cuenta cómo DALL-E se basa en modelos de lenguaje grande a medida que la entrada del lenguaje natural genera imágenes. 
+    ```
+    How do I go about setting up a business in New York?
+    ```
 
-1. Vuelva al chat de Copilot haciendo clic en el icono de Microsoft Bing en la esquina superior derecha de la pantalla. 
+1. Revise la respuesta, que debe contener algunos consejos y vínculos a recursos para ayudarle a empezar a establecer una empresa en Nueva York, y puede incluir algunas indicaciones de seguimiento sugeridas para obtener más información.
 
-## Probar la generación de código
+    > **Importante**: La respuesta generada por IA se basa en la información pública en la Web. Aunque puede ser útil ayudarle a comprender los pasos necesarios para establecer un negocio, no se garantiza que sea 100 % preciso. No reemplace la necesidad de asesoramiento profesional.
 
-1. Ahora vamos a ver un ejemplo de generación y traducción de código. Escriba una solicitud: `Use Python to create a list`. 
+## Uso de Copilot para crear contenido para un plan de negocio
 
-1. Escriba la solicitud: `Translate that into C#`. Observe que no ha necesitado especificar qué es "eso", ya que Copilot sabe que se refiere al historial de conversaciones.
+Ahora que ha realizado algunas investigaciones iniciales, vamos a que Copilot le ayude a desarrollar un plan de negocio para su empresa de limpieza.
 
-## Tarea extra
+1. Con el documento **Business Idea.docx** abierto en Microsoft Edge, en el panel Copilot, escriba la siguiente indicación:
 
-1. Escriba una solicitud: `What are 3 examples of generative AI helping people?`. Esto puede servirle como lluvia de ideas para su propio Copilot.  
+    ```
+    Suggest a name for my cleaning business
+    ```
+
+1. Revise las sugerencias y seleccione un nombre para su empresa de limpieza (o continúe enviando indicaciones hasta encontrar un nombre que desee).
+1. Escriba la siguiente indicación y reemplace *Contoso Cleaning* por el nombre de la empresa de su elección:
+
+    ```
+    Write a business plan for "Contoso Cleaning" based on the information in this document. Include an executive summary, market overview, and financial projections.
+    ```
+
+1. Revise la respuesta y, en la salida, use el icono **Copiar** (&#128461;) para copiarlo en el Portapapeles. A continuación, seleccione todo el texto del documento **Business Ideas.docx** y pegue el texto copiado en el documento para reemplazarlo. Por último, ordene el texto pegado reemplazando el texto inicial en la respuesta (en el que Copilot reconoció la instrucción) por un encabezado para el nombre de la empresa de limpieza. Debería terminar con un documento de plan de negocio, similar al siguiente:
+
+    ![Captura de pantalla de un documento de Word con un plan de negocio generado por Copilot.](./media/generative-ai/generated-content.png)
+
+1. En el panel Copilot, escriba la indicación siguiente:
+
+    ```
+    Create a corporate logo for the cleaning company. The logo should be round and include an iconic New York landmark.
+    ```
+
+1. Revise la respuesta, que debe presentar cuatro opciones para un logotipo creado por Microsoft Designer.
+1. Use más indicaciones para iterar en el diseño (por ejemplo, `Make it green and blue`) hasta que tenga un logotipo con el que esté satisfecho.
+1. Haga clic con el botón derecho en el diseño del logotipo que prefiera y cópielo en el Portapapeles. Después, péguelo en la parte superior del documento del plan de negocio, de la siguiente manera:
+
+    ![Captura de pantalla de un documento de Word con una imagen generada por Copilot.](./media/generative-ai/generated-image.png)
+
+1. Cierre la pestaña Microsoft Word y vuelva a la carpeta **Documentos** de OneDrive.
+
+## Uso de Copilot para crear contenido para una presentación
+
+Con la ayuda de Copilot, ha creado un borrador de un plan de negocio para la idea de un negocio de limpieza. Ahora necesitará una presentación eficaz para convencer a un inversor de prestarle la financiación para iniciar el negocio.
+
+1. En la carpeta **Documentos** de OneDrive, agregue una nueva **presentación de PowerPoint**.
+
+    Si el panel**Designer** se abre automáticamente, ciérrelo.
+
+1. En la diapositiva de título de la presentación, escriba el nombre de la empresa de limpieza como título y `Investor Opportunity` como subtítulo.
+1. Agregue una nueva diapositiva con el diseño de diapositiva **Dos contenidos** (que incluye un título y dos marcadores de posición para el contenido).
+1. Cambie el título de la diapositiva a `Benefits of Hiring a Commercial Cleaner`.
+1. En el panel Copilot, escriba la indicación siguiente:
+
+    ```
+    Write a summary of the benefits of using a corporate cleaning company for your business. The summary should consist of five short bullet points.
+    ```
+
+1. Copie la respuesta de Copilot al Portapapeles y péguela en el marcador de posición de contenido izquierdo. A continuación, elimine la oración inicial que reconoce la solicitud y vuelva a aplicar formato al texto en el marcador de posición hasta que esté satisfecho.
+1. En el panel Copilot, escriba la indicación siguiente:
+
+    ```
+    Create a photorealistic image of a clean office.
+    ```
+
+1. Cuando Copilot haya generado una imagen que le guste, cópiela en el Portapapeles y péguela en el marcador de posición de contenido de la derecha de la diapositiva.
+
+    Si el panel **Designer** se abre automáticamente, seleccione un diseño de diapositivas que desee. A continuación, cierre el panel **Designer**.
+
+1. Aplique cualquier nuevo formato adicional que considere necesario hasta que tenga una diapositiva similar a esta:
+
+    ![Captura de pantalla de una presentación de PowerPoint con contenido generado por Copilot.](./media/generative-ai/powerpoint-slide.png)
+
+1. En la barra de título de PowerPoint, seleccione el nombre de presentación predeterminado (**Presentación**) y cámbielo a `Business Presentation.pptx`.
+1. Cierre la pestaña PowerPoint y vuelva a la carpeta **Documentos** de OneDrive.
+
+## Uso de Copilot para redactar un correo electrónico
+
+Ha creado algunas garantías para ayudarle a empezar a trabajar con su negocio. Ahora es el momento de comunicarse con un inversor que busque financiar alguna startup.
+
+1. Use el **Iniciador de aplicaciones** en el extremo izquierdo de la barra de título de OneDrive para abrir **Outlook**.
+1. Cree un nuevo correo electrónico y rellene el cuadro **Para** con su propia dirección de correo electrónico.
+1. En el panel Copilot, seleccione la pestaña **Redactar**. A continuación, establezca las siguientes opciones para crear contenido nuevo:
+    - **Escribe sobre**: `Request a meeting with an investment bank to discuss funding for a commercial cleaning business.`
+    - **Tono**: Profesional
+    - **Format**: Email
+    - **Longitud**: Mediana
+1. Seleccione **Generar borrador** y revise la salida generada.
+1. Use el contenido generado para completar el correo electrónico, como se muestra aquí:
+
+    ![Captura de pantalla de un mensaje de correo electrónico generado por Copilot.](./media/generative-ai/generated-email.png)
+
+    Puede enviarse el correo electrónico a sí mismo si lo desea.
+
+## Desafío
+
+Ahora ha visto cómo usar Copilot para investigar ideas y generar contenido, ¿por qué no intentar explorar más? Para iniciar una nueva sesión de Copilot, en la pestaña **Chat**, seleccione el icono **Nuevo tema** situado junto al cuadro de indicaciones y, a continuación, intente usar Copilot para planear un evento para promover la alfabetización infantil en una biblioteca local. Algunas cosas que podría probar incluyen:
+
+- Investiga algunas sugerencias para animar a los niños a leer a una edad temprana.
+- Crea un folleto o póster para el evento.
+- Redacta un correo electrónico para una campaña para invitar a los autores locales de contenido para niños a asistir y hablar en el evento.
+- Crea una presentación para iniciar el evento.
+
+Use su imaginación como guste y explore cómo Copilot puede ayudarle a encontrar información, generar y refinar texto, crear imágenes y responder preguntas.
+
+
+## Conclusión
+
+En este ejercicio, ha usado Copilot en Microsoft Edge para buscar información y generar contenido. Esperamos que haya visto cómo usar la IA generativa en un copiloto puede ayudar con la productividad y la creatividad.
+
+Aunque los servicios gratuitos usados en estos ejercicios son sin duda muy eficaces, puede lograr aún más con servicios como [Copilot para Microsoft 365](https://www.microsoft.com/microsoft-365/enterprise/copilot-for-microsoft-365), en el que Microsoft Copilot se integra en las aplicaciones de productividad de Windows y Microsoft Office, proporcionando ayuda muy contextualizada con tareas comunes. Microsoft 365 le permite aportar la eficacia de la IA generativa a los datos y procesos empresariales, al tiempo que se integra en la infraestructura de TI existente para garantizar una solución fácil de administrar y proteger.

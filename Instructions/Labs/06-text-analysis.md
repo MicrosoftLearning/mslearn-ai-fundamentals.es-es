@@ -15,18 +15,18 @@ Lenguaje de Azure AI incluye funcionalidades de análisis de texto y NLP. Estos 
 
 ## Creación de un recurso de *Language*
 
-Puede usar muchas características de lenguaje de Azure AI con un recurso **Language** o **servicios de Azure AI**. Hay algunas instancias en las que solo se puede usar un recurso Language. Para el siguiente ejercicio, usaremos un recurso de **Language**. Si aún no lo ha hecho, cree un recurso de **Language** en la suscripción de Azure.
+Puede usar muchas características de Lenguaje de Azure AI con un recurso de **Lenguaje** o **servicios de Azure AI**. Hay algunas instancias en las que solo se puede usar un recurso de Lenguaje. Para el siguiente ejercicio, usaremos un recurso de **Lenguaje**. Si aún no lo ha hecho, cree un recurso de **Language** en la suscripción de Azure.
 
-1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con la cuenta de Microsoft asociada a la suscripción de Azure.
+1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con la cuenta de Microsoft asociada a la suscripción de Azure.
 
 1. Haga clic en el botón **&#65291;Crear un recurso** y busque *servicio de lenguaje*. Seleccione **Crear** un plan de **servicio de lenguaje**. Se le llevará a una página para **Seleccionar características adicionales**. Mantenga la selección predeterminada y haga clic en **Continuar para crear el recurso**. 
 
 1. En la página **Crear lenguaje**, configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
-    - **Región**: Este de EE. UU.
+    - **Región**: *Seleccione la región geográfica más cercana. Si está en el este de EE. UU., use "Este de EE. UU. 2"*.
     - **Nombre**: *escriba un nombre único*.
-    - **Plan de tarifa**: *Gratis o S si Gratis no está disponible*
+    - **Plan de tarifa**: *F0 o S gratis si F0 no está disponible*
     - **Al marcar esta casilla, confirmo haber leído y comprendido todos los términos que aparecen a continuación**: *Seleccionado*.
 
 1. Seleccione **Revisar y crear**, a continuación, **Crear**, y espere a que se complete la implementación.
@@ -103,8 +103,8 @@ En este ejercicio ha usado Language Studio para crear un nuevo recurso Language 
 
 Si no tiene previsto realizar más ejercicios, elimine los recursos que ya no necesite. Esto evita la acumulación de costos innecesarios.
 
-1. Abra **Azure Portal** en [https://portal.azure.com](https://portal.azure.com) y seleccione el grupo de recursos que contiene el recurso que creó.
-1. Seleccione el recurso y seleccione **Eliminar** y, a continuación, **Sí** para confirmar. A continuación, se elimina el recurso.
+1. Abra **Azure Portal** en [https://portal.azure.com](https://portal.azure.com) y seleccione el grupo de recursos que contiene el recurso que creó.
+1. Seleccione el recurso y seleccione **Eliminar** y, después, **Sí** para confirmar. A continuación, se eliminará el recurso.
 
 ## Saber más
 
