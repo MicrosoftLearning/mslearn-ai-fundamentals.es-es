@@ -9,8 +9,6 @@ En este ejercicio, usará la característica de aprendizaje automático automati
 
 Este ejercicio debería tardar en completarse **30** minutos aproximadamente.
 
->**Importante** En este momento, es posible crear e implementar un modelo como servicio web en Estudio de Azure Machine Learning, pero no probarlo en Studio. Por lo tanto, todas las secciones de pasos, excepto la última, antes de realizar la limpieza son posibles. Se actualizará a medida que cambie.
-
 ## Creación de un área de trabajo de Azure Machine Learning
 
 Para usar Azure Machine Learning, debe aprovisionar un área de trabajo de Azure Machine Learning en su suscripción de Azure. Tras haberlo hecho, podrá usar el Estudio de Azure Machine Learning para trabajar con los recursos del área de trabajo.
@@ -47,8 +45,8 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
 
     **Configuración básica**:
 
-    - **Nombre del trabajo**: mslearn-bike-automl
-    - **Nuevo nombre del experimento**: mslearn-bike-rental.
+    - **Nombre del trabajo**: `mslearn-bike-automl`
+    - **Nombre del experimento nuevo**: `mslearn-bike-rental`
     - **Descripción**: aprendizaje automático automatizado para la predicción del alquiler de bicicletas
     - **Etiquetas**: *ninguna*
 
@@ -57,24 +55,16 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
     - **Selección del tipo de tarea**: regresión
     - **Selección del conjunto de datos**: cree un conjunto de datos con la siguiente configuración:
         - **Tipo de datos**:
-            - **Nombre**: bike-rentals.
-            - **Descripción**: datos históricos de alquiler de bicicletas
-            - **Tipo**: tabular
+            - **Nombre**: `bike-rentals`
+            - **Descripción**: `Historic bike rental data`
+            - **Tipo**: Tabla (mltable)
         - **Origen de datos**:
-            - Seleccione **De archivos web**
-        - **Dirección URL web**:
-            - **Dirección URL web**: `https://aka.ms/bike-rentals`
-            - **Omitir validación de datos**: *no seleccionar*.
-        - **Configuración**:
-            - **Formato de archivo**: delimitado
-            - **Delimitador**: coma
-            - **Codificación**: UTF-8
-            - **Encabezados de columna**: solo el primer archivo tiene encabezados
-            - **Omitir filas**: ninguno
-            - **Dataset contains multi-line data (El conjunto de datos contiene datos de varias líneas)**: *no seleccionar*
-        - **Esquema**:
-            - incluir todas las columnas que no sean **Ruta de acceso**
-            - Revisar los tipos detectados automáticamente
+            - Seleccione **Desde archivos locales**
+        - **Tipo de almacenamiento de destino**:
+            - **Tipo de almacén de datos**: Azure Blob Storage
+            - **Nombre**: workspaceblobstore
+        - **Selección de MLtable**:
+            - **Cargar carpeta**: *Descargar la carpeta que contiene los dos archivos que necesita cargar desde* `https://aka.ms/bike-rentals`
 
         Seleccione **Crear**. Una vez creado el conjunto de datos, seleccione el conjunto de datos de **alquiler de bicicletas** para continuar con el envío del trabajo de ML automatizado.
 
@@ -84,17 +74,18 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
     - **Conjunto de datos**: bike-rentals.
     - **Columna de destino**: alquileres (entero)
     - **Opciones de configuración adicionales**:
-        - **Métrica primaria**: error de desviación media cuadrática normalizada
+        - **Métrica primaria**: NormalizedRootMeanSquaredError
         - **Explicación del mejor modelo**: *no seleccionado*
+        - **Habilitación del apilamiento de conjuntos**: *Sin seleccionar*
         - **Use all supported models** (Usar todos los modelos admitidos): <u>no</u> seleccionado. *Restringirá el trabajo para probar solo algunos algoritmos específicos.*
         - **Allowed models** (Modelos permitidos): *seleccione solo **RandomForest** y **LightGBM**: normalmente, le gustaría probar tantos como sea posible, pero cada modelo agregado aumenta el tiempo que se tarda en ejecutar el experimento*.
     - **Límites**: *expanda esta sección*
-        - **Pruebas máximas**: 3
-        - **Número máximo de pruebas simultáneas**: 3
-        - **Número máximo de nodos**: 3
-        - **Umbral de puntuación de métrica**: 0,085 (*esto hace que el trabajo finalice si algún modelo logra una puntuación de métrica de raíz del error cuadrático medio normalizado de 0,085 o menos*).
-        - **Tiempo de expiración**: 15
-        - **Tiempo de expiración de la iteración**: 15
+        - **Número máximo de pruebas**: `3`
+        - **Número máximo de pruebas simultáneas**: `3`
+        - **Número máximo de nodos**: `3`
+        - **Umbral de puntuación de métrica**: `0.085` (*para que si un modelo logra una puntuación de métrica de raíz del error cuadrático medio normalizado de 0,085 o menos, finalice el trabajo*).
+        - **Tiempo de expiración del experimento**: `15`
+        - **Tiempo de expiración de la iteración**: `15`
         - **Habilitación de la terminación anticipada**: *seleccionada*
     - **Validación y prueba**:
         - **Tipo de validación**: división entre entrenamiento y validación.
@@ -126,24 +117,25 @@ Una vez completado el trabajo de aprendizaje automático automatizado, puede rev
   
 1. Seleccione el texto bajo **Nombre del algoritmo** para el mejor modelo a fin de ver sus detalles.
 
-1. Seleccione la pestaña **Métricas** y seleccione los gráficos **valores residuales** y **predicted_true** si aún no están seleccionados. 
+1. Seleccione la pestaña **Métricas** y seleccione los gráficos **valores residuales** y **predicted_true** si aún no están seleccionados.
 
-    Revise los gráficos en los que se muestran el rendimiento del modelo. En el gráfico de **valores residuales** se muestran los *valores residuales* (las diferencias entre los valores predichos y reales) como un histograma. El gráfico de **predicted_true** compara los valores previstos con los valores True. 
+    Revise los gráficos en los que se muestran el rendimiento del modelo. En el gráfico de **valores residuales** se muestran los *valores residuales* (las diferencias entre los valores predichos y reales) como un histograma. El gráfico de **predicted_true** compara los valores previstos con los valores True.
 
 ## Implementación y prueba del modelo
 
-1. En la pestaña **Modelo** del mejor modelo entrenado en el trabajo de aprendizaje automático automatizado, seleccione **Implementar** y use la opción **Servicio web** para implementar el modelo con la siguiente configuración:
-    - **Nombre**: predict-rentals
-    - **Descripción**: predicción de alquileres de bicicletas
-    - **Tipo de proceso**: instancia de Azure Container.
-    - **Habilitar autenticación**: *seleccionada*
+1. En la pestaña **Modelo** del mejor modelo entrenado por el trabajo de aprendizaje automático automatizado, seleccione **Implementar** y use la opción **Punto de conexión en tiempo real** para implementar el modelo con los valores siguientes:
+    - **Máquina virtual**: Standard_DS3_v2
+    - **Recuento de instancias**: 3
+    - **Punto de conexión**: Nuevo
+    - **Nombre del punto de conexión**: *Deje el valor predeterminado o asegúrese de que es único globalmente*
+    - **Nombre de implementación**: *Deje el valor predeterminado*
+    - **Recopilación de datos de inferencia**: *Deshabilitado*
+    - **Empaquetado del modelo**: *Deshabilitado*
 
 1. Espere a que se inicie la implementación; esto puede tardar unos segundos. El **estado de implementación** del punto de conexión **predict-rentals** se indicará en la parte principal de la página como *En ejecución*.
 1. Espere a que el **estado de implementación** cambie a *Realizado correctamente*. Esto podría tardar de 5 a 10 minutos.
 
 ## Prueba del modelo implementado
-
->**Importante** Actualmente, Estudio de Azure Machine Learning no admite el tipo de creación de conjuntos de datos necesario para usar las pruebas de implementación. Le actualizaremos cuando haya una resolución. 
 
 Ahora puede probar el servicio implementado.
 
