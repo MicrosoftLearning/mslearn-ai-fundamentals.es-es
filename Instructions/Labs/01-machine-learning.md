@@ -64,7 +64,7 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
             - **Tipo de almacén de datos**: Azure Blob Storage
             - **Nombre**: workspaceblobstore
         - **Selección de MLtable**:
-            - **Cargar carpeta**: *Descargar la carpeta que contiene los dos archivos que necesita cargar desde* `https://aka.ms/bike-rentals`
+            - **Cargar carpeta**: *Descargar y descomprimir la carpeta que contiene los dos archivos que necesita cargar* `https://aka.ms/bike-rentals`
 
         Seleccione **Crear**. Una vez creado el conjunto de datos, seleccione el conjunto de datos de **alquiler de bicicletas** para continuar con el envío del trabajo de ML automatizado.
 
@@ -145,29 +145,31 @@ Ahora puede probar el servicio implementado.
 
 1. En el **panel de datos de entrada para evaluar el punto de conexión**, reemplace la plantilla JSON por los datos de entrada siguientes:
 
-    ```JSON
+    ```json
     {
-      "Inputs": { 
-        "data": [
-          {
-            "day": 1,
-            "mnth": 1,   
-            "year": 2022,
-            "season": 2,
-            "holiday": 0,
-            "weekday": 1,
-            "workingday": 1,
-            "weathersit": 2, 
-            "temp": 0.3, 
-            "atemp": 0.3,
-            "hum": 0.3,
-            "windspeed": 0.3 
-          }
-        ]    
-      },   
-      "GlobalParameters": 1.0
+      "input_data": {
+        "columns": [
+            {
+                "day": 1,
+                "mnth": 1,   
+                "year": 2022,
+                "season": 2,
+                "holiday": 0,
+                "weekday": 1,
+                "workingday": 1,
+                "weathersit": 2, 
+                "temp": 0.3, 
+                "atemp": 0.3,
+                "hum": 0.3,
+                "windspeed": 0.3 
+            }
+        ],
+        "index": [],
+        "data": []
+      }
     }
     ```
+
 
 1. Haga clic en el botón **Probar**.
 
