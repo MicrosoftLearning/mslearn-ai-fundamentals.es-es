@@ -45,9 +45,9 @@ En este ejercicio, usarás Voz de Azure AI en el Portal de la Fundición de IA d
 
 ## Exploración de la conversión de voz en texto en el área de juegos de voz de Fundición de IA de Azure
 
-Vamos a probar la *conversión de voz en texto* en el área de juegos de voz de Fundición de IA de Azure. 
+Vamos a probar la *conversión de voz en texto en tiempo real* en el área de juegos de voz de Fundición de IA de Azure. 
 
-1. En la página *Voz*, desplázate hacia abajo y selecciona **Transcripción en tiempo real** en *Probar funcionalidades de Voz*. Se abrirá *Área de juegos de voz*. 
+1. En la página *Voz*, desplázate hacia abajo y selecciona **Voz a texto en tiempo real** en *Probar funcionalidades de Voz*. Se abrirá *Área de juegos de voz*. 
 
 1. Seleccione [**https://aka.ms/mslearn-speech-files**](https://aka.ms/mslearn-speech-files) para descargar **speech.zip.** Abra la carpeta . 
 
@@ -59,15 +59,15 @@ Vamos a probar la *conversión de voz en texto* en el área de juegos de voz de 
 
 1. Revise la salida, que debería haber reconocido y transcrito correctamente el audio en texto.
 
-En este ejercicio, has probado los servicios de Voz de Azure AI en el Área de juegos de voz de Fundición de IA de Azure. Luego has usado la transcripción en tiempo real para transcribir una grabación de audio. Ha podido ver que se genera la transcripción de texto a medida que se reproduce el archivo de audio.
+En este ejercicio, has probado los servicios de Voz de Azure AI en el Área de juegos de voz de Fundición de IA de Azure. A continuación, ha usado el servicio de conversión de voz en texto en tiempo real para transcribir una grabación de audio. Ha podido ver que se genera la transcripción de texto a medida que se reproduce el archivo de audio.
 
-## Limpieza
+## Limpiar
 
-Si no tienes previsto hacer más ejercicios, elimina los recursos que ya no necesites. Esto evita la acumulación de costes innecesarios.
+Si no tiene previsto realizar más ejercicios, elimine los recursos que ya no necesite. Esto evita la acumulación de costes innecesarios.
 
 1. Abra [Azure Portal]( https://portal.azure.com) y seleccione el grupo de recursos que contenga el recurso que creó.
 1. Seleccione el recurso y seleccione **Eliminar** y, después, **Sí** para confirmar. A continuación, se eliminará el recurso.
 
 ## Saber más
 
-Este ejercicio ha demostrado una de las muchas funcionalidades del servicio Voz. Para más información sobre lo que puede hacer con este servicio, consulte la [página de Voz](https://azure.microsoft.com/services/cognitive-services/speech-services).
+En este ejercicio solo se muestran algunas de las funcionalidades del servicio Voz. Para más información sobre lo que puede hacer con este servicio, consulte la [página de Voz](https://azure.microsoft.com/services/cognitive-services/speech-services).

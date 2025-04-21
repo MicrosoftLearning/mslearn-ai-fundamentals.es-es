@@ -79,13 +79,15 @@ La siguiente característica que probará es la funcionalidad *Extraer etiquetas
 
 1. Vuelve a la página *Visión + Documento* de Fundición de IA de Azure, selecciona la pestaña **Imagen** y selecciona el icono **Extracción de etiquetas comunes**.
 
-1. Abra la carpeta que contenga las imágenes que descargó y busque el archivo denominado **store-image-2.jpg**, que tiene el siguiente aspecto:
+2. En **Elija el modelo que desee probar**, deje seleccionado **Producto precompilado frente a modelo de rango**. En **Elija el idioma**, seleccione **Inglés** o un idioma de su preferencia.
+
+3. Abra la carpeta que contenga las imágenes que descargó y busque el archivo denominado **store-image-2.jpg**, que tiene el siguiente aspecto:
 
     ![Imagen de una persona con una cesta de la compra en un supermercado](./media/analyze-images-vision/store-camera-2.jpg)
 
-1. Cargue el archivo **store-camera-2.jpg**.
+4. Cargue el archivo **store-camera-2.jpg**.
 
-1. Revise la lista de etiquetas extraídas de la imagen y la puntuación de confianza de cada una en el panel de atributos detectados. Aquí, la puntuación de confianza es la probabilidad de que el texto del atributo detectado describa lo que realmente está en la imagen. Observe en la lista de etiquetas que incluya no solo objetos, sino acciones, como *comprando*, *vendiendo* y *de pie*.
+5. Revise la lista de etiquetas extraídas de la imagen y la puntuación de confianza de cada una en el panel de atributos detectados. Aquí, la puntuación de confianza es la probabilidad de que el texto del atributo detectado describa lo que realmente está en la imagen. Observe en la lista de etiquetas que incluya no solo objetos, sino acciones, como *comprando*, *vendiendo* y *de pie*.
 
     ![Captura de pantalla del panel Detectar atributos en Studio de Visión con puntuaciones de texto y confianza que se muestran junto a la imagen original.](./media/analyze-images-vision/detect-attributes.png)
 
@@ -94,6 +96,8 @@ La siguiente característica que probará es la funcionalidad *Extraer etiquetas
 En esta tarea, se usa la característica **Detección de objetos** de Análisis de imágenes. Detección de objetos detecta y extrae cuadros de límite basados en miles de objetos reconocibles y seres vivos.
 
 1. Vuelve a la página *Visión + Documento* de Fundición de IA de Azure, selecciona la pestaña **Imagen** y selecciona el icono **Detección de objetos comunes**.
+
+1. En **Elija el modelo que desee probar**, deje seleccionado **Producto precompilado frente a modelo de rango**.
 
 1. Abra la carpeta que contenga las imágenes que descargó y busque el archivo denominado **store-camera-3.jpg**, que tiene el siguiente aspecto:
 
