@@ -7,7 +7,7 @@ lab:
 
 En este ejercicio, usará la característica de aprendizaje automático automatizado en Azure Machine Learning para entrenar y evaluar un modelo de aprendizaje automático. Después, implementará y probará el modelo entrenado.
 
-Este ejercicio debería tardar en completarse **30** minutos aproximadamente.
+Este ejercicio debería tardar en completarse **35** minutos aproximadamente.
 
 ## Creación de un área de trabajo de Azure Machine Learning
 
@@ -21,7 +21,7 @@ Para usar Azure Machine Learning, debe aprovisionar un área de trabajo de Azure
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos*.
     - **Nombre**: *escriba un nombre único para el área de trabajo*.
-    - **Región**: *seleccione la región geográfica más cercana*.
+    - **Región**: Este de EE. UU.
     - **Cuenta de almacenamiento**: *tenga en cuenta la nueva cuenta de almacenamiento predeterminada que se creará para el área de trabajo*.
     - **Almacén de claves**: *tenga en cuenta el nuevo almacén de claves predeterminado que se creará para el área de trabajo*.
     - **Application Insights**: *tenga en cuenta el nuevo recurso de Application Insights predeterminado que se creará para el área de trabajo*.
@@ -29,7 +29,9 @@ Para usar Azure Machine Learning, debe aprovisionar un área de trabajo de Azure
 
 1. Seleccione **Revisar y crear** y, luego, **Crear**. Espere a que se cree el área de trabajo (puede tardar unos minutos) y, a continuación, vaya al recurso implementado.
 
-1. Seleccione **Iniciar estudio** (o abra una nueva pestaña del explorador y vaya a [https://ml.azure.com](https://ml.azure.com?azure-portal=true) e inicie sesión en estudio de Azure Machine Learning con su cuenta de Microsoft). Cierre los mensajes que se muestran.
+#### Iniciar Estudio 
+
+1. En el recurso de área de trabajo de Azure Machine Learning, selecciona **Iniciar Studio** (o abre una nueva pestaña del explorador y ve a [https://ml.azure.com](https://ml.azure.com?azure-portal=true) e inicia sesión en Estudio de Azure Machine Learning con la cuenta de Microsoft). Cierre los mensajes que se muestran.
 
 1. En estudio de Azure Machine Learning, debería ver el área de trabajo recién creada. Si no, selecciona **Todas las áreas de trabajo** en el menú izquierdo y selecciona el área de trabajo que acabas de crear.
 
@@ -45,7 +47,7 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
 
     **Configuración básica**:
 
-    - **Nombre del trabajo**: `mslearn-bike-automl`
+    - **Nombre de trabajo**: el campo Nombre de trabajo ya debe estar rellenado previamente con un nombre único. Déjelo como está.
     - **Nombre del experimento nuevo**: `mslearn-bike-rental`
     - **Descripción**: aprendizaje automático automatizado para la predicción del alquiler de bicicletas
     - **Etiquetas**: *ninguna*
@@ -112,8 +114,6 @@ Una vez completado el trabajo de aprendizaje automático automatizado, puede rev
 
 1. En la pestaña **Visión general** de la ejecución del aprendizaje automático automatizado, tenga en cuenta el resumen del mejor modelo.
     ![Captura de pantalla del mejor resumen del modelo del trabajo de aprendizaje automático automatizado con un cuadro alrededor del nombre del algoritmo.](./media/use-automated-machine-learning/complete-run.png)
-
-    > **Nota:** Es posible que vea un mensaje bajo el estado "Advertencia: Se alcanzó la puntuación de salida especificada por el usuario...". Este es un comportamiento esperado. Continúe con la sección siguiente.
   
 1. Seleccione el texto bajo **Nombre del algoritmo** para el mejor modelo a fin de ver sus detalles.
 
@@ -132,6 +132,8 @@ Una vez completado el trabajo de aprendizaje automático automatizado, puede rev
     - **Recopilación de datos de inferencia**: *Deshabilitado*
     - **Empaquetado del modelo**: *Deshabilitado*
 
+    > **Nota** Si recibe un mensaje que indica que no hay suficiente cuota para seleccionar la máquina virtual *Standard_DS3_v2*, selecciona una diferente.
+
 1. Espere a que se inicie la implementación; esto puede tardar unos segundos. El **estado de implementación** del punto de conexión **predict-rentals** se indicará en la parte principal de la página como *En ejecución*.
 1. Espere a que el **estado de implementación** cambie a *Realizado correctamente*. Esto podría tardar de 5 a 10 minutos.
 
@@ -146,41 +148,37 @@ Ahora puede probar el servicio implementado.
 1. En el **panel de datos de entrada para evaluar el punto de conexión**, reemplace la plantilla JSON por los datos de entrada siguientes:
 
     ```json
-    {
-      "input_data": {
-        "columns": [
-            {
-                "day": 1,
-                "mnth": 1,   
-                "year": 2022,
-                "season": 2,
-                "holiday": 0,
-                "weekday": 1,
-                "workingday": 1,
-                "weathersit": 2, 
-                "temp": 0.3, 
-                "atemp": 0.3,
-                "hum": 0.3,
-                "windspeed": 0.3 
-            }
-        ],
-        "index": [],
-        "data": []
-      }
+      {
+     "input_data": {
+       "columns": [
+         "day",
+         "mnth",
+         "year",
+         "season",
+         "holiday",
+         "weekday",
+         "workingday",
+         "weathersit",
+         "temp",
+         "atemp",
+         "hum",
+         "windspeed"
+       ],
+       "index": [0],
+       "data": [[1,1,2022,2,0,1,1,2,0.3,0.3,0.3,0.3]]
+     }
     }
-    ```
 
+    ```
 
 1. Haga clic en el botón **Probar**.
 
 1. Revise los resultados de la prueba, que incluyen un número previsto de alquileres en función de las características de entrada similar a lo siguiente:
 
     ```JSON
-    {
-      "Results": [
-        444.27799000000000
-      ]
-    }
+    [
+      352.3564674945718
+    ]
     ```
 
     El panel de prueba tomó los datos de entrada y utilizó el modelo entrenado para devolver el número de alquileres previsto.

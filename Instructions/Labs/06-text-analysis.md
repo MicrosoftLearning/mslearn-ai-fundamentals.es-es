@@ -49,7 +49,7 @@ Las *entidades con nombre* son palabras que describen personas, lugares y objeto
 
 1. En el área de juegos de lenguaje, selecciona **Extraer información**. A continuación, selecciona el icono **Extraer entidades con nombre**. 
 
-1. En *Muestra*, copia y pega la siguiente reseña:
+1. En *Ejemplo*, copia y pega la siguiente revisión:
 
     ```
     Tired hotel with poor service
@@ -66,7 +66,7 @@ Las *frases clave* son los fragmentos de información más importantes del texto
 
 1. En el área de juegos de lenguaje, selecciona **Extraer información**. Luego selecciona el icono **Extraer frases clave**. 
 
-1. En *Muestra*, copia y pega la siguiente reseña:
+1. En *Ejemplo*, copia y pega la siguiente revisión:
 
     ```
     Good Hotel and staff

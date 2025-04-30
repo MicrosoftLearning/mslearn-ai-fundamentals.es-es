@@ -25,9 +25,9 @@ En este ejercicio, usarás los modelos precompilados de Documento de inteligenci
  
     ![Captura de pantalla del panel para crear un proyecto con nombres generados automáticamente para el centro y el proyecto](./media/azure-ai-foundry-create-project.png)
 
-> **Importante**: necesitarás que los servicios de Azure AI vuelvan a aprovisionar en una ubicación específica para completar el resto del laboratorio.
+> **Importante**: Necesitarás un recurso de Servicios de Azure AI aprovisionado en una ubicación específica para completar el resto del laboratorio.
 
-1. En el mismo panel *Crear un proyecto*, selecciona **Personalizar** y una de las siguientes **ubicaciones**: Este de EE. UU., Centro de Francia, Centro de Corea del Sur, Oeste de Europa u Oeste de EE. UU. para completar el resto del laboratorio. A continuación, selecciona **Crear**. 
+1. En el mismo panel *Crear un proyecto*, selecciona **Personalizar** y elige una de las siguientes **Ubicaciones**: Este de EE. UU., Centro de Francia, Centro de Corea del Sur, Oeste de Europa u Oeste de EE. UU. para completar el resto del laboratorio. Después selecciona **Crear**. 
 
 1. Toma nota de los recursos que se crean: 
 - Servicios de Azure AI
@@ -37,9 +37,9 @@ En este ejercicio, usarás los modelos precompilados de Documento de inteligenci
 - Key vault
 - Resource group  
  
-1. Una vez creados los recursos, se mostrará la página *Información general* del proyecto. En el menú izquierdo de la pantalla, selecciona **Servicios de IA**.
+1. Una vez creados los recursos, se mostrará la página *Información general* de tu proyecto. En el menú izquierdo de la pantalla, selecciona **Servicios de IA**.
  
-    ![Captura de pantalla del menú izquierdo en la pantalla del proyecto con Servicios de IA seleccionado.](./media/azure-ai-foundry-ai-services.png)  
+    ![Captura de pantalla del menú izquierdo en la pantalla del proyecto con Servicios de IA seleccionado](./media/azure-ai-foundry-ai-services.png)  
 
 1. En la página *Servicios de IA*, selecciona el icono *Visión y documento* para probar las funcionalidades de Documento de inteligencia de Azure AI.
 

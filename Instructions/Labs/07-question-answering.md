@@ -3,11 +3,9 @@ lab:
   title: Uso de respuesta a preguntas con Language Studio
 ---
 
-# Uso del modelo de respuesta a preguntas con Language Studio
+# Uso de respuesta a preguntas con Language Studio
 
-En este ejercicio, usará Language Studio para crear y entrenar una knowledge base de preguntas y respuestas que usará un bot de servicios al cliente. El contenido de la knowledge base provendrá de una página de preguntas más frecuentes existente del sitio web de Margie’s Travel, una agencia ficticia de viajes. Después, usará Language Studio para ver cómo funcionaría cuando lo usen los clientes.
-
-Al implementar un bot, el primer paso es crear una knowledge base de pares de preguntas y respuestas. Esto se usa junto con las funcionalidades integradas de procesamiento de lenguaje natural para que el bot pueda interpretar preguntas y encontrar la respuesta más adecuada para el usuario.
+En este ejercicio, usarás Language Studio para crear y entrenar una knowledge base de preguntas y respuestas. El contenido de la knowledge base provendrá de una página de preguntas más frecuentes existente del sitio web de Margie’s Travel, una agencia ficticia de viajes. Después, usará Language Studio para ver cómo funcionaría cuando lo usen los clientes.
 
 Lenguaje de Azure AI incluye funcionalidades de *respuesta a preguntas*, que usará para crear una knowledge base. Las knowledge bases pueden crearse escribiendo pares de preguntas y respuestas manualmente o desde un documento o página web existente. Margie’s Travel quiere usar su documento de preguntas más frecuentes existente.
 
@@ -104,56 +102,16 @@ Ahora que tiene una knowledge base, puede probarla.
 1. Pruebe otra pregunta, como `How can I cancel a reservation?`
 1. Cuando haya terminado de probar la knowledge base, seleccione **Probar** para cerrar el panel de prueba.
 
-## Creación de un bot para la base de conocimiento
+## Implementar el proyecto
 
-La base de conocimiento proporciona un servicio back-end que las aplicaciones cliente pueden usar para responder preguntas a través de algún tipo de interfaz de usuario. Normalmente, estas aplicaciones cliente son bots. Para que la base de conocimiento esté disponible para un bot, debe publicarlo como un servicio al que se pueda acceder a través de HTTP. A continuación, puede usar Azure Bot Service para crear y hospedar un bot que use la base de conocimiento para responder a las preguntas del usuario.
+Puede implementar la knowledge base como una aplicación cliente para responder a preguntas.
 
 1. En el panel izquierdo, seleccione **Implementar knowledge base**.
 1. En la parte superior de la página, seleccione **Implementar**. Un cuadro de diálogo le preguntará si desea implementar el proyecto. Seleccione **Implementar**.
 
  ![Implemente la knowledge base.](media/create-a-bot/deploy-knowledge-base.png)
 
-1. Una vez implementado el servicio, seleccione **Crear un bot**. Se abrirá Azure Portal en una nueva pestaña del explorador para que pueda crear un bot de aplicación web en su suscripción de Azure.
-1. En Azure Portal, cree un **bot de aplicación web**. (Es posible que vea un mensaje de advertencia para comprobar que el origen de la plantilla es de confianza. No es necesario realizar ninguna acción con ese mensaje). Continúe actualizando la siguiente configuración:
-
-    - **Detalles del proyecto**
-        - **Suscripción**: *suscripción de Azure*
-        - **Grupo de recursos**: *grupo de recursos que contiene el recurso de Language*
-    - **Detalles de instancia**
-        - **Ubicación del grupo de recursos**: *la misma que la del servicio de lenguaje*.
-    - **Azure Bot**
-        - **Identificador de bot**: *nombre único para el bot* (*rellenado previamente*).
-    - **Elija su plan de tarifa**
-        - **Plan de tarifa**: Gratis (F0) (es posible que tenga que seleccionar *Cambiar plan*).
-    - **Microsoft App ID (Id. de aplicación de Microsoft)**
-        - **Tipo de creación**: *Seleccione **Crear nueva identidad administrada asignada por el usuario*** 
-
-5. Seleccione **Siguiente** para continuar actualizando la configuración. 
-    - **App Service**
-        - **Nombre de aplicación**: *el mismo que el **Identificador de bot** con **.azurewebsites.net** agregado automáticamente*.
-        - **Lenguaje del SDK**: *elija C# o Node.js*.
-    - **Plan de App Service**
-        - **Tipo de creación**: *Seleccione **Crear nuevo plan de App Service***
-    - **Configuración de aplicaciones**
-        - **Clave de recurso de lenguaje**: *deberá copiar la clave de recurso de lenguaje y pegarla aquí*:
-            - Abra otra pestaña del explorador y vaya a Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true).
-            - Vaya al recurso del servicio de lenguaje.
-            - En la página **Claves y punto de conexión**, copie una de las claves
-            - Péguela aquí.
-        - **Nombre del proyecto de lenguaje**: MargiesTravel
-        - **Nombre de host del punto de conexión del servicio de lenguaje**: *rellenado previamente con el punto de conexión del servicio de lenguaje*
-    - **Detalles del servicio de lenguaje**
-        - **Identificador de suscripción**: *rellenado previamente con el identificador de suscripción*
-        - **Nombre del grupo de recursos**: *rellenado previamente con el nombre del grupo de recursos*
-        - **Nombre de cuenta**: *rellenado previamente con el nombre del recurso*
-
-1. Seleccione **Crear**. A continuación, espere hasta que se cree su bot (el icono de campana de la esquina superior derecha se animará mientras espera). Cuando aparezca el mensaje que indica que se ha completado la implementación, seleccione **Ir al recurso** (o, en la página principal, haga clic en **Grupo de recursos**, abra el grupo de recursos en el que haya creado el bot y seleccione el recurso **Bot de Azure**).
-1. En el panel izquierdo del bot, busque **Configuración**, seleccione **Probar en el Chat en web** y espere hasta que el bot muestre el mensaje **Hola y bienvenido** (puede tardar unos segundos en inicializarse).
-1. Use la interfaz de chat de prueba para asegurarse de que el bot responde a las preguntas de la base de conocimiento según lo previsto. Por ejemplo, pruebe a enviar `I need to cancel my hotel`.
-
-Experimente con el bot. Probablemente observará que el bot puede responder preguntas de las preguntas más frecuentes con bastante precisión, pero tendrá una capacidad limitada para interpretar las preguntas con las que no se ha entrenado. Siempre puede usar Language Studio para editar la knowledge base a fin de mejorarla y volver a publicarla.
-
-## Limpiar
+## Limpieza
 
 Si no tiene previsto realizar más ejercicios, elimine los recursos que ya no necesite. Esto evita la acumulación de costes innecesarios.
 
@@ -163,4 +121,3 @@ Si no tiene previsto realizar más ejercicios, elimine los recursos que ya no ne
 ## Saber más
 
 - Para obtener más información sobre el servicio de respuesta a preguntas, vea la [documentación](https://docs.microsoft.com/azure/cognitive-services/language-service/question-answering/overview).
-- Para más información sobre Microsoft Bot Service, consulte la [página de Azure Bot Service](https://azure.microsoft.com/services/bot-service/).
