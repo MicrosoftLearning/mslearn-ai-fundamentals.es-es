@@ -1,11 +1,3 @@
-#README
-
-We've turned off the ability to report issues directly on this repo and do not monitor PRs.
-
-Provide feedback here: https://aka.ms/provide-feedback
-
-Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
-
 # Ejercicios de Fundamentos de Microsoft Azure AI
 
 Este repositorio contiene instrucciones y recursos para los ejercicios prácticos de Microsoft Official Courseware que son de ayuda para el certificado [Microsoft Certified: Azure AI Fundamentals](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/). Los ejercicios están diseñados para complementar los módulos de entrenamiento asociados en [Microsoft Learn](https://learn.microsoft.com/training), y un <u>subconjunto</u> de estos ejercicios consta de los laboratorios prácticos en el curso oficial dirigido por un profesor [AI-900: Microsoft Azure AI Fundamentals](https://learn.microsoft.com/en-us/training/courses/ai-900t00).
