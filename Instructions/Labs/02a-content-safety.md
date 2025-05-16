@@ -1,8 +1,3 @@
----
-lab:
-  title: Exploración de la seguridad del contenido en Fundición de IA de Azure
----
-
 # Exploración de la seguridad del contenido en Fundición de IA de Azure
 
 Los servicios de Azure AI ayudan a los usuarios a crear aplicaciones de IA con API y modelos precompilados y personalizables. En este ejercicio, echarás un vistazo a uno de los servicios, Seguridad del contenido de Azure AI, que te permite moderar el contenido de texto e imagen. En el Portal de la Fundición de IA de Azure, la plataforma de Microsoft para crear aplicaciones inteligentes, usarás la Seguridad del contenido de Azure AI para clasificar el texto y asignarle una puntuación de gravedad. 
