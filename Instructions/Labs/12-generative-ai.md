@@ -9,33 +9,36 @@ La IA generativa describe una categoría de funcionalidades dentro de la IA que 
 
 ## Creación de un proyecto en el portal de Azure AI Foundry
 
-1. En una pestaña del explorador, ve a [Fundición de IA de Azure](https://ai.azure.com?azure-portal=true).
+Comencemos creando un proyecto de Fundición de IA de Azure.
 
-1. Inicie sesión con su cuenta. 
+1. En un explorador web, abre el [Portal de la Fundición de IA de Azure](https://ai.azure.com) en `https://ai.azure.com` e inicia sesión con tus credenciales de Azure. Cierra las sugerencias o paneles de inicio rápido que se abran la primera vez que inicias sesión y, si es necesario, usa el logotipo de **Fundición de IA de Azure** en la parte superior izquierda para navegar a la página principal, que es similar a la siguiente imagen (cierra el panel **Ayuda** si está abierto):
 
-1. En la página principal del Portal de la Fundición de IA de Azure, selecciona **Crear un proyecto**. En Fundición de IA de Azure, los proyectos son contenedores que te ayudan a organizar el trabajo.  
+    ![Captura de pantalla de la página principal de Fundición de IA de Azure con la opción de crear un agente seleccionada.](./media/azure-ai-foundry-home-page.png)
 
-    ![Captura de pantalla de la página principal de Fundición de IA de Azure con la opción de crear un proyecto seleccionada](./media/azure-ai-foundry-home-page.png)
+1. En la página principal, selecciona **+ Crear un agente**.
 
-1. En el panel *Crear un proyecto*, verás un nombre de proyecto generado, que puedes mantener tal cual. Dependiendo de si has creado un centro en el pasado, verás una lista de *nuevos* recursos de Azure que se van a crear o una lista desplegable de centros existentes. Si ves la lista desplegable de centros existentes, selecciona *Crear nuevo centro*, crea un nombre único para el centro y selecciona *Siguiente*.  
- 
-    ![Captura de pantalla del panel para crear un proyecto con nombres generados automáticamente para el centro y el proyecto](./media/azure-ai-foundry-create-project.png)
+1. En el asistente para **Crear un agente**, escribe un nombre válido para el proyecto. 
 
-    > **Importante**: Necesitarás un recurso de Servicios de Azure AI aprovisionado en una ubicación específica para completar el resto del laboratorio.
+1. Selecciona **Opciones avanzadas** y especifica los siguientes valores:
+    - **Recurso de Fundición de IA de Azure**: *mantén el nombre predeterminado*
+    - **Suscripción**: *suscripción a Azure*
+    - **Grupo de recursos**: *crea o selecciona un grupo de recursos*
+    - **Región**: selecciona una de las siguientes ubicaciones:
+        * Este de EE. UU.
+        * Centro de Francia
+        * Centro de Corea del Sur
+        * Oeste de Europa
+        * Oeste de EE. UU.
 
-1. En el mismo panel *Crear un proyecto*, selecciona **Personalizar** y elige una de las siguientes **Ubicaciones**: Este de EE. UU., Centro de Francia, Centro de Corea del Sur, Oeste de Europa u Oeste de EE. UU. para completar el resto del laboratorio. Después selecciona **Crear**. 
+1. Selecciona **Crear** y revisa la configuración. Espera hasta que se complete el proceso de configuración.
 
-1. Toma nota de los recursos que se crean: 
-- Servicios de Azure AI
-- Centro de Azure AI
-- Proyecto de Azure AI
-- Cuenta de almacenamiento
-- Key vault
-- Resource group  
- 
-1. Una vez creados los recursos, se mostrará la página *Información general* de tu proyecto. En el menú de la izquierda de la pantalla, selecciona **Áreas de juegos**.
- 
-    ![Captura de pantalla del menú izquierdo en la pantalla del proyecto con Servicios de IA seleccionado](./media/azure-ai-foundry-playgrounds.png)  
+    >**Nota**: si recibes un error de permisos, selecciona el botón **Corregirlo** para agregar los permisos adecuados para continuar.
+
+1. Cuando se crea el proyecto, se te mostrará de forma predeterminada el área de juegos Agents en el portal de la Fundición de IA de Azure, que debe tener un aspecto similar a la siguiente imagen:
+
+    ![Captura de pantalla de los detalles de un proyecto de Azure AI en el Portal de la Fundición de IA de Azure.](./media/ai-foundry-project-2.png)
+
+1. En el menú de la izquierda de la pantalla, selecciona **Áreas de juegos**.
 
 ## Exploración de la IA generativa en el área de juegos de chat de Fundición de IA de Azure
 
@@ -69,7 +72,7 @@ La IA generativa describe una categoría de funcionalidades dentro de la IA que 
 
 1. Revisa la respuesta, que debe proporcionar algunos lugares para alojarse en París.
 
-1. Vamos a iterar sobre la base de las indicaciones y respuestas anteriores para mejorar el resultado. Escribe la siguiente indicación:
+1. Vamos a iterar sobre la base de las indicaciones y respuestas anteriores para mejorar el resultado. Escriba la siguiente indicación:
     
     ```prompt
     Can you give me more information about dining options near the first location?
@@ -85,7 +88,7 @@ La IA generativa describe una categoría de funcionalidades dentro de la IA que 
 
 1. Revisa la respuesta, que debe proporcionar información basada en el sitio web proporcionado. 
 
-1. Vamos a intentar agregar contexto para maximizar la relevancia de la respuesta. Escribe la siguiente indicación: 
+1. Vamos a intentar agregar contexto para maximizar la relevancia de la respuesta. Escriba la siguiente indicación: 
 
     ```prompt
     What three places do you recommend I stay in Paris to be within walking distance to historical attractions? Explain your reasoning.
@@ -93,7 +96,7 @@ La IA generativa describe una categoría de funcionalidades dentro de la IA que 
 
 1. Revisa la respuesta y el razonamiento de la misma.  
 
-1. Ahora vamos a establecer expectativas claras para la respuesta Escribe la siguiente indicación:
+1. Ahora vamos a establecer expectativas claras para la respuesta Escriba la siguiente indicación:
     
     ```prompt
     What are the top 10 sights to see in Paris? Answer with a numbered list in order of popularity.
