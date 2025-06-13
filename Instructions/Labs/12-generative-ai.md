@@ -9,20 +9,15 @@ La IA generativa describe una categoría de funcionalidades dentro de la IA que 
 
 ## Creación de un proyecto en el portal de Azure AI Foundry
 
-Comencemos creando un proyecto de Fundición de IA de Azure.
+1. En un explorador web, abre el [Portal de la Fundición de IA de Azure](https://ai.azure.com) en `https://ai.azure.com` e inicia sesión con tus credenciales de Azure. Cierra las sugerencias o paneles de inicio rápido que se abran la primera vez que inicies sesión. 
 
-1. En un explorador web, abre el [Portal de la Fundición de IA de Azure](https://ai.azure.com) en `https://ai.azure.com` e inicia sesión con tus credenciales de Azure. Cierra las sugerencias o paneles de inicio rápido que se abran la primera vez que inicias sesión y, si es necesario, usa el logotipo de **Fundición de IA de Azure** en la parte superior izquierda para navegar a la página principal, que es similar a la siguiente imagen (cierra el panel **Ayuda** si está abierto):
+1. En el explorador, ve a `https://ai.azure.com/managementCenter/allResources` y selecciona **Crear**. A continuación, elige la opción para crear un *nuevo recurso de Fundición de IA de Azure*.
 
-    ![Captura de pantalla de la página principal de Fundición de IA de Azure con la opción de crear un agente seleccionada.](./media/azure-ai-foundry-home-page.png)
+1. En el asistente para *Crear un proyecto*, escribe un nombre válido para el proyecto.
 
-1. En la página principal, selecciona **+ Crear un agente**.
-
-1. En el asistente para **Crear un agente**, escribe un nombre válido para el proyecto. 
-
-1. Selecciona **Opciones avanzadas** y especifica los siguientes valores:
-    - **Recurso de Fundición de IA de Azure**: *mantén el nombre predeterminado*
-    - **Suscripción**: *suscripción a Azure*
-    - **Grupo de recursos**: *crea o selecciona un grupo de recursos*
+1. Expande *Opciones avanzadas* y especifica los siguientes valores para el proyecto:
+    - **Suscripción** : su suscripción a Azure.
+    - **Grupo de recursos**: crea o selecciona un grupo de recursos
     - **Región**: selecciona una de las siguientes ubicaciones:
         * Este de EE. UU.
         * Centro de Francia
@@ -30,13 +25,9 @@ Comencemos creando un proyecto de Fundición de IA de Azure.
         * Oeste de Europa
         * Oeste de EE. UU.
 
-1. Selecciona **Crear** y revisa la configuración. Espera hasta que se complete el proceso de configuración.
+    Espera a que se cree el proyecto y el centro.
 
-    >**Nota**: si recibes un error de permisos, selecciona el botón **Corregirlo** para agregar los permisos adecuados para continuar.
-
-1. Cuando se crea el proyecto, se te mostrará de forma predeterminada el área de juegos Agents en el portal de la Fundición de IA de Azure, que debe tener un aspecto similar a la siguiente imagen:
-
-    ![Captura de pantalla de los detalles de un proyecto de Azure AI en el Portal de la Fundición de IA de Azure.](./media/ai-foundry-project-2.png)
+1. Cuando se cree el proyecto, se te dirigirá a una página *Información general* de los detalles del proyecto.
 
 1. En el menú de la izquierda de la pantalla, selecciona **Áreas de juegos**.
 
@@ -44,10 +35,9 @@ Comencemos creando un proyecto de Fundición de IA de Azure.
 
 1. En la página de áreas de juegos de Fundición de IA de Azure, selecciona **Probar el área de juegos de chat**. El área de juegos de chat es una interfaz de usuario que te permite probar la creación de una aplicación de chat con diferentes modelos de IA generativa.  
 
-1. Para usar el área de juegos de chat, debes asociarla a un modelo implementado. En el área de juegos de chat, selecciona **Crear una implementación**. Busca y selecciona **GPT-4**. 
+1. Para usar el área de juegos de chat, debes asociarla a un modelo implementado. En el área de juegos de chat, debe seleccionar **gpt-4o**. Si no se ve ninguna implementación, debes seleccionar **+ Crear una implementación**, buscar **gpt-4o** y, después, seleccionar **Confirmar** y, por último, **Implementar**.
 
-1. En la ventana *Implementar modelo*, mantén la selección y el nombre predeterminados y selecciona **Implementar**. El modelo puede tardar un momento en implementarse. Para comprobar el estado de la implementación, selecciona *Modelos y puntos de conexión* en el menú de la izquierda, bajo *Mis recursos*.
-1. En el área de juegos de chat, puedes usar tu modelo implementado cuando aparezca en el menú de selección *Implementación*. Asegúrate de que esté seleccionado el modelo que has implementado. Recuerda que debes seleccionar **Aplicar cambios** después de realizar cualquier cambio en la *Configuración*. 
+1. En el área de juegos de chat, puedes usar tu modelo implementado cuando aparezca en el menú de selección *Implementación*. Recuerda que debes seleccionar **Aplicar cambios** después de realizar cualquier cambio en la *Configuración*. 
 
 1. Ten en cuenta las siguientes formas de mejorar las respuestas de un asistente de IA generativa:
     - Comienza con una meta específica de lo que quieres que haga el asistente
@@ -105,3 +95,11 @@ Comencemos creando un proyecto de Fundición de IA de Azure.
 1. Revisa la respuesta, que debe proporcionar una lista numerada de lugares de interés para ver en París.
 
 1. Cuando hayas terminado, puedes cerrar la ventana del explorador.
+
+## Limpieza
+
+Si no tiene previsto realizar más ejercicios, elimine los recursos que ya no necesite. Esto evita la acumulación de costos innecesarios.
+
+1. Abre **Azure Portal** en [https://portal.azure.com](https://portal.azure.com) y selecciona el grupo de recursos que contiene los recursos que creaste.
+
+1. Selecciona los recursos y selecciona **Eliminar** y, después, **Sí** para confirmar. A continuación, se eliminarán los recursos.

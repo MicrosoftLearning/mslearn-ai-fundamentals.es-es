@@ -11,20 +11,15 @@ Supongamos que el minorista ficticio *Northwind Traders* decidió implementar un
 
 ## Creación de un proyecto en el portal de Azure AI Foundry
 
-Comencemos creando un proyecto de Fundición de IA de Azure.
+1. En un explorador web, abre el [Portal de la Fundición de IA de Azure](https://ai.azure.com) en `https://ai.azure.com` e inicia sesión con tus credenciales de Azure. Cierra las sugerencias o paneles de inicio rápido que se abran la primera vez que inicies sesión. 
 
-1. En un explorador web, abre el [Portal de la Fundición de IA de Azure](https://ai.azure.com) en `https://ai.azure.com` e inicia sesión con tus credenciales de Azure. Cierra las sugerencias o paneles de inicio rápido que se abran la primera vez que inicias sesión y, si es necesario, usa el logotipo de **Fundición de IA de Azure** en la parte superior izquierda para navegar a la página principal, que es similar a la siguiente imagen (cierra el panel **Ayuda** si está abierto):
+1. En el explorador, ve a `https://ai.azure.com/managementCenter/allResources` y selecciona **Crear**. A continuación, elige la opción para crear un nuevo *recurso del centro de IA*.
 
-    ![Captura de pantalla de la página principal de Fundición de IA de Azure con la opción de crear un agente seleccionada.](./media/azure-ai-foundry-home-page.png)
+1. En el asistente para *crear un proyecto*, escribe un nombre válido y si se te sugiere un centro existente, selecciona la opción para crear uno *nuevo*. 
 
-1. En la página principal, selecciona **+ Crear un agente**.
-
-1. En el asistente para **Crear un agente**, escribe un nombre válido para el proyecto. 
-
-1. Selecciona **Opciones avanzadas** y especifica los siguientes valores:
-    - **Recurso de Fundición de IA de Azure**: *mantén el nombre predeterminado*
-    - **Suscripción**: *suscripción a Azure*
-    - **Grupo de recursos**: *crea o selecciona un grupo de recursos*
+1. Expande *Opciones avanzadas* para especificar los siguientes valores para tu proyecto:
+    - **Suscripción** : su suscripción a Azure.
+    - **Grupo de recursos**: crea o selecciona un grupo de recursos
     - **Región**: selecciona una de las siguientes ubicaciones:
         * Este de EE. UU.
         * Centro de Francia
@@ -32,17 +27,13 @@ Comencemos creando un proyecto de Fundición de IA de Azure.
         * Oeste de Europa
         * Oeste de EE. UU.
 
-1. Selecciona **Crear** y revisa la configuración. Espera hasta que se complete el proceso de configuración.
+    Espera a que se cree el proyecto y el centro.
 
-    >**Nota**: si recibes un error de permisos, selecciona el botón **Corregirlo** para agregar los permisos adecuados para continuar.
-
-1. Cuando se crea el proyecto, se te mostrará de forma predeterminada el área de juegos Agents en el portal de la Fundición de IA de Azure, que debe tener un aspecto similar a la siguiente imagen:
-
-    ![Captura de pantalla de los detalles de un proyecto de Azure AI en el Portal de la Fundición de IA de Azure.](./media/ai-foundry-project-2.png)
- 
-1. En una nueva ventana del explorador, abre la [página de exploración de servicios de Azure AI](https://ai.azure.com/explore/aiservices).
+1. Cuando se cree el proyecto, se te llevará a la página *Información general* de los detalles del proyecto. Selecciona **Servicios de IA** en el menú de la izquierda (es posible que tengas que expandir el menú al hacer clic en el icono superior para leer su contenido). 
 
 1. En la página *Servicios de IA*, selecciona el icono *Visión y documento* para probar las funcionalidades de Visión y documento de Azure AI.
+
+    ![Captura de pantalla del icono Vision + Documento de Fundición de IA de Azure.](./media/vision-document-tile.png)
 
 ## Generación de títulos de imágenes
 
@@ -51,6 +42,8 @@ Vamos a usar la funcionalidad de subtitulación de imágenes de Visión de Azure
 1. En la página *Visión y documento*, desplázate hacia abajo y selecciona **Imagen** en *Ver todas las demás funcionalidades de visión*. A continuación, selecciona el icono **Subtitulación de imágenes**.
 
     ![Captura de pantalla del icono de subtitulación de imágenes en la sección de imagen de la página Visión y documento.](./media/vision-image-captioning-tile.png)
+
+1. En la página **Agregar subtítulos a las imágenes**, selecciona el recurso *Servicios de Azure AI* que has creado. 
 
 1. En la página **Agregar subtítulos a imágenes**, revisa el recurso al que estás conectado, que aparece en el subtítulo **Probarlo**. No deberías tener que realizar ningún cambio. (*Nota*: si no personalizaste una ubicación de recurso válida durante la creación de recursos, es posible que se te pida que crees un nuevo recurso de Servicios de Azure AI que se encuentre en una región válida. Tendrás que crear el nuevo recurso para continuar con el laboratorio).  
 

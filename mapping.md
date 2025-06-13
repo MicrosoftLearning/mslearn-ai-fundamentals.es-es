@@ -12,10 +12,11 @@ El subconjunto de laboratorios de AI-900 usado en este curso está asignado a ca
 
 | Número de laboratorio para entrenadores de AI-900 | Tema | Instrucciones |
 | --- | --- | --- |
-| Información general sobre la inteligencia artificial de AI-900 | Explorar Servicios de Azure AI | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2250253) |
-| AI-900 Computer Vision | Análisis de imágenes con Fundición de IA de Azure | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2250145) |
-| Procesamiento del lenguaje natural de AI-900 | Análisis de texto con Fundición de IA de Azure | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2250314) |
-| Documento de inteligencia de AI-900 | Extracción de datos de formulario en la Fundición de IA de Azure | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2250315) |
-| IA generativa de AI-900 | Exploración de la inteligencia artificial generativa en la Fundición de IA de Azure | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2249955) |
+| IA generativa de AI-900 | Exploración de la IA generativa en el Portal de la Fundición de IA de Azure | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2249955) |
+| Procesamiento del lenguaje natural de AI-900 | Análisis de texto en el Portal de la Fundición de IA de Azure | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2250314) |
+| Voz AI-900 | Exploración de voz en el Portal de la Fundición de IA de Azure | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2250148) |
+| AI-900 Computer Vision | Análisis de imágenes en el Portal de la Fundición de IA de Azure | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2250145) |
+| Extracción de información de AI-900 | Extracción de datos con comprensión de contenidos en el Portal de la Fundición de IA de Azure | [Instrucciones del laboratorio](https://go.microsoft.com/fwlink/?linkid=2320420) |
+
 
 
