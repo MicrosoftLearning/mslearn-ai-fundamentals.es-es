@@ -177,9 +177,7 @@ Después de tener los documentos en el almacenamiento, puede usar Búsqueda de A
 
 1. Deje la **Programación** establecida en **Una vez**.
 
-1. Expanda las **Opciones avanzadas**. Asegúrese de que la opción **Claves de codificación Base 64** está seleccionada, ya que las claves de codificación pueden hacer que el índice sea más eficaz.
-
-1. Seleccione **Enviar** para crear un origen de datos, un conjunto de aptitudes, un índice y un indexador. El indexador se ejecuta automáticamente y ejecuta la canalización de indexación, que hace lo siguiente:
+1. Selecciona **Enviar** para crear un origen de datos, un conjunto de aptitudes, un índice y un indexador. El indexador se ejecuta automáticamente y ejecuta la canalización de indexación, que hace lo siguiente:
     - Extrae los campos de metadatos del documento y el contenido del origen de datos.
     - Ejecuta el conjunto de aptitudes cognitivas para generar campos más enriquecidos.
     - Asigna los campos extraídos al índice.
