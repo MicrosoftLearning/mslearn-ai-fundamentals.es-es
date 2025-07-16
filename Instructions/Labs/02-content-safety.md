@@ -33,13 +33,11 @@ Para incorporar Servicios de Azure AI en aplicaciones, los desarrolladores neces
 
 ## Consulta Servicios de Azure AI en acción
 
-1. En una pestaña del explorador, ve a [Fundición de IA de Azure](https://ai.azure.com?azure-portal=true).
+Comencemos creando un proyecto de Fundición de IA de Azure.
 
-1. Inicie sesión con su cuenta. 
-
-1. En *Trabajar fuera de un proyecto*, selecciona el icono **Ver servicios de IA**.
+1. En un explorador web, abre el [Portal de la Fundición de IA de Azure](https://ai.azure.com) en `https://ai.azure.com` e inicia sesión con tus credenciales de Azure. Cierra las sugerencias o paneles de inicio rápido que se abran la primera vez que inicies sesión.
  
-    ![Captura de pantalla del menú izquierdo en la pantalla del proyecto con Servicios de IA seleccionado](./media/view-ai-foundry-outside-project.png)  
+1. En una nueva ventana del explorador, abre la [página de exploración de servicios de Azure AI](https://ai.azure.com/explore/aiservices).
 
 1. En la página *Servicios de IA*, selecciona el icono *Visión y documento* para probar las funcionalidades de Visión y documento de Azure AI.
 
@@ -64,12 +62,4 @@ Para incorporar Servicios de Azure AI en aplicaciones, los desarrolladores neces
 ## Limpieza 
 
 Una vez que hayas terminado, se puede eliminar el recurso Servicios de Azure AI de Azure Portal. Eliminar el recurso es una manera de reducir los costes que se acumulan cuando el recurso existe en la suscripción. Para ello, ve a la página **Información general** de tu recurso de Servicios de Azure AI. En la parte superior de la pantalla, seleccione **Eliminar**.
-
-
-
-
-
-
-
-
 

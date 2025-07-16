@@ -13,37 +13,29 @@ En este ejercicio, usarás los modelos precompilados de Documento de inteligenci
 
 ## Creación de un proyecto en el portal de Azure AI Foundry
 
-1. En una pestaña del explorador, ve a [Fundición de IA de Azure](https://ai.azure.com?azure-portal=true).
+1. En un explorador web, abre el [Portal de la Fundición de IA de Azure](https://ai.azure.com) en `https://ai.azure.com` e inicia sesión con tus credenciales de Azure. Cierra las sugerencias o paneles de inicio rápido que se abran la primera vez que inicies sesión. 
 
-1. Inicie sesión con su cuenta. 
+1. En el explorador, ve a `https://ai.azure.com/managementCenter/allResources` y selecciona **Crear**. A continuación, elige la opción para crear un nuevo *recurso del centro de IA*.
 
-1. En la página principal del Portal de la Fundición de IA de Azure, selecciona **Crear un proyecto**. En Fundición de IA de Azure, los proyectos son contenedores que te ayudan a organizar el trabajo.  
+1. En el asistente para *crear un proyecto*, escribe un nombre válido y si se te sugiere un centro existente, selecciona la opción para crear uno *nuevo*. 
 
-    ![Captura de pantalla de la página principal de Fundición de IA de Azure con la opción de crear un proyecto seleccionada](./media/azure-ai-foundry-home-page.png)
+1. Expande *Opciones avanzadas* para especificar los siguientes valores para tu proyecto:
+    - **Suscripción** : su suscripción a Azure.
+    - **Grupo de recursos**: crea o selecciona un grupo de recursos
+    - **Región**: selecciona una de las siguientes ubicaciones:
+        * Este de EE. UU.
+        * Centro de Francia
+        * Centro de Corea del Sur
+        * Oeste de Europa
+        * Oeste de EE. UU.
 
-1. En el panel *Crear un proyecto*, verás un nombre de proyecto generado, que puedes mantener tal cual. Dependiendo de si has creado un centro en el pasado, verás una lista de *nuevos* recursos de Azure que se van a crear o una lista desplegable de centros existentes. Si ves la lista desplegable de centros existentes, selecciona *Crear nuevo centro*, crea un nombre único para el centro y selecciona *Siguiente*.  
- 
-    ![Captura de pantalla del panel para crear un proyecto con nombres generados automáticamente para el centro y el proyecto](./media/azure-ai-foundry-create-project.png)
+    Espera a que se cree el proyecto y el centro.
 
-> **Importante**: Necesitarás un recurso de Servicios de Azure AI aprovisionado en una ubicación específica para completar el resto del laboratorio.
+1. Cuando se cree el proyecto, se te llevará a la página *Información general* de los detalles del proyecto. Selecciona **Servicios de IA** en el menú de la izquierda. 
 
-1. En el mismo panel *Crear un proyecto*, selecciona **Personalizar** y elige una de las siguientes **Ubicaciones**: Este de EE. UU., Centro de Francia, Centro de Corea del Sur, Oeste de Europa u Oeste de EE. UU. para completar el resto del laboratorio. Después selecciona **Crear**. 
+1. En la página *Servicios de IA*, selecciona el icono *Visión y documento* para probar las funcionalidades de Visión y documento de Azure AI.
 
-1. Toma nota de los recursos que se crean: 
-- Servicios de Azure AI
-- Centro de Azure AI
-- Proyecto de Azure AI
-- Cuenta de almacenamiento
-- Key vault
-- Resource group  
- 
-1. Una vez creados los recursos, se mostrará la página *Información general* de tu proyecto. En el menú izquierdo de la pantalla, selecciona **Servicios de IA**.
- 
-    ![Captura de pantalla del menú izquierdo en la pantalla del proyecto con Servicios de IA seleccionado](./media/azure-ai-foundry-ai-services.png)  
-
-1. En la página *Servicios de IA*, selecciona el icono *Visión y documento* para probar las funcionalidades de Documento de inteligencia de Azure AI.
-
-    ![Captura de pantalla del icono Visión y documento seleccionado en la página Servicios de IA.](./media/vision-document-tile.png)
+    ![Captura de pantalla del icono Vision + Documento de Fundición de IA de Azure.](./media/vision-document-tile.png)
 
 ## Análisis de recibos con Documento de inteligencia de Azure AI en Fundición de IA de Azure 
 
