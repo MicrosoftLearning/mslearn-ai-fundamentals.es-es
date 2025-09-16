@@ -31,7 +31,7 @@ Para usar Azure Machine Learning, debe aprovisionar un área de trabajo de Azure
 
 #### Iniciar Estudio 
 
-1. En el recurso de área de trabajo de Azure Machine Learning, selecciona **Iniciar Studio** (o abre una nueva pestaña del explorador y ve a [https://ml.azure.com](https://ml.azure.com?azure-portal=true) e inicia sesión en Estudio de Azure Machine Learning con la cuenta de Microsoft). Cierre los mensajes que se muestran.
+1. En el recurso de área de trabajo de Azure Machine Learning, selecciona **Iniciar Studio** (o abre una nueva pestaña del explorador y ve a [https://ml.azure.com](https://ml.azure.com) e inicia sesión en Estudio de Azure Machine Learning con la cuenta de Microsoft). Cierre los mensajes que se muestran.
 
 1. En estudio de Azure Machine Learning, debería ver el área de trabajo recién creada. Si no, selecciona **Todas las áreas de trabajo** en el menú izquierdo y selecciona el área de trabajo que acabas de crear.
 
@@ -49,26 +49,27 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
 
     - **Nombre de trabajo**: el campo Nombre de trabajo ya debe estar rellenado previamente con un nombre único. Déjelo como está.
     - **Nombre del experimento nuevo**: `mslearn-bike-rental`
-    - **Descripción**: aprendizaje automático automatizado para la predicción del alquiler de bicicletas
+    - **Descripción**: `Automated machine learning for bike rental prediction`
     - **Etiquetas**: *ninguna*
 
    **Tipo de tarea y datos**:
 
     - **Selección del tipo de tarea**: regresión
-    - **Selección del conjunto de datos**: cree un conjunto de datos con la siguiente configuración:
-        - **Tipo de datos**:
-            - **Nombre**: `bike-rentals`
-            - **Descripción**: `Historic bike rental data`
-            - **Tipo**: Tabla (mltable)
-        - **Origen de datos**:
-            - Seleccione **Desde archivos locales**
-        - **Tipo de almacenamiento de destino**:
-            - **Tipo de almacén de datos**: Azure Blob Storage
-            - **Nombre**: workspaceblobstore
-        - **Selección de MLtable**:
-            - **Cargar carpeta**: *Descargar y descomprimir la carpeta que contiene los dos archivos que necesita cargar* `https://aka.ms/bike-rentals`
-
-        Seleccione **Crear**. Una vez creado el conjunto de datos, seleccione el conjunto de datos de **alquiler de bicicletas** para continuar con el envío del trabajo de ML automatizado.
+    - **Seleccione datos**:
+        - Cree un nuevo recurso de datos con la siguiente configuración:
+            - **Tipo de datos**:
+                - **Nombre**: `bike-rentals`
+                - **Descripción**: `Historic bike rental data`
+                - **Tipo**: Tabla (mltable)
+            - **Origen de datos**:
+                - Seleccione **Desde archivos locales**
+            - **Tipo de almacenamiento de destino**:
+                - **Tipo de almacén de datos**: Azure Blob Storage
+                - **Nombre**: workspaceblobstore
+            - **Selección de MLtable**:
+                - *Descargue y descomprima la [carpeta bike-data](https://aka.ms/bike-rentals) de `https://aka.ms/bike-rentals`.*
+                - **Cargar carpeta**: *Cargue la carpeta **bike-data** extraída, que contiene los archivos de definición de datos y tablas que necesita para el conjunto de datos de entrenamiento.*
+        - Seleccione el recurso de datos de **alquiler de bicicletas** recién creado y continúe definiendo el trabajo de ML automatizado en la página siguiente (**Configuración de la tarea**).
 
     **Configuración de la tarea**:
 
@@ -77,8 +78,8 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
     - **Columna de destino**: alquileres (entero)
     - **Opciones de configuración adicionales**:
         - **Métrica primaria**: NormalizedRootMeanSquaredError
-        - **Explicación del mejor modelo**: *no seleccionado*
-        - **Habilitación del apilamiento de conjuntos**: *Sin seleccionar*
+        - **Explicación del mejor modelo**: *<u>No</u>seleccionado*
+        - **Habilitación del apilamiento de conjuntos**: *<u>No</u>seleccionado*
         - **Use all supported models** (Usar todos los modelos admitidos): <u>no</u> seleccionado. *Restringirá el trabajo para probar solo algunos algoritmos específicos.*
         - **Allowed models** (Modelos permitidos): *seleccione solo **RandomForest** y **LightGBM**: normalmente, le gustaría probar tantos como sea posible, pero cada modelo agregado aumenta el tiempo que se tarda en ejecutar el experimento*.
     - **Límites**: *expanda esta sección*
@@ -134,16 +135,16 @@ Una vez completado el trabajo de aprendizaje automático automatizado, puede rev
 
     > **Nota** Si recibe un mensaje que indica que no hay suficiente cuota para seleccionar la máquina virtual *Standard_DS3_v2*, selecciona una diferente.
 
-1. Espere a que se inicie la implementación; esto puede tardar unos segundos. El **estado de implementación** del punto de conexión **predict-rentals** se indicará en la parte principal de la página como *En ejecución*.
+1. Espere a que se inicie la implementación; esto puede tardar unos segundos. El **estado de implementación** del punto de conexión se indicará en la parte principal de la página como *En ejecución*.
 1. Espere a que el **estado de implementación** cambie a *Realizado correctamente*. Esto podría tardar de 5 a 10 minutos.
 
 ## Prueba del modelo implementado
 
 Ahora puede probar el servicio implementado.
 
-1. En Estudio de Azure Machine Learning, en el menú de la izquierda, seleccione **Puntos de conexión** y abra el punto de conexión **predict-rentals** en tiempo real.
+1. En Estudio de Azure Machine Learning, en el menú de la izquierda, seleccione **Puntos de conexión** y abra el punto de conexión en tiempo real que ha creado.
 
-1. En la página **predict-rentals** del punto de conexión en tiempo real, aparecerá la pestaña **Prueba**.
+1. En la página punto de conexión en tiempo real, vea la pestaña **Prueba**.
 
 1. En el **panel de datos de entrada para evaluar el punto de conexión**, reemplace la plantilla JSON por los datos de entrada siguientes:
 
@@ -183,17 +184,24 @@ Ahora puede probar el servicio implementado.
 
     El panel de prueba tomó los datos de entrada y utilizó el modelo entrenado para devolver el número de alquileres previsto.
 
-Revisemos lo que ha hecho. Ha usado un conjunto de datos históricos de alquiler de bicicletas para entrenar un modelo. El modelo predice el número de alquileres de bicicletas que se espera en un día determinado, en función de las *características* estacionales y meteorológicas.
+## Visualización del código para consumir el servicio
+
+Ahora que tiene un punto de conexión de servicio predictivo, los desarrolladores pueden compilar aplicaciones que la consuman.
+
+1. En la página punto de conexión en tiempo real, vea la pestaña **Consumir**.
+1. Revise el código de ejemplo para consumir el punto de conexión, que se proporciona para varios lenguajes de programación.
+
+Revisemos lo que ha hecho. Ha usado un conjunto de datos históricos de alquiler de bicicletas para entrenar un modelo. El modelo predice el número de alquileres de bicicletas que se espera en un día determinado, en función de las *características* estacionales y meteorológicas. Por último, ha probado el modelo y ha revisado el código que un desarrollador puede usar para compilar una aplicación para consumirlo.
 
 ## Limpieza
 
 El servicio web que se ha creado se hospeda en una *instancia de Azure Container*. Si no tiene previsto experimentar con él, debe eliminar el punto de conexión para evitar el uso innecesario de Azure.
 
-1. En [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true), en la pestaña **Puntos de conexión**, seleccione el punto de conexión **predict-rentals**. A continuación, seleccione **Eliminar** y confirme que quiere eliminar el punto de conexión.
+1. En [Estudio de Azure Machine Learning](https://ml.azure.com), en la pestaña **Puntos de conexión**, seleccione el punto de conexión que ha implementado. A continuación, seleccione **Eliminar** y confirme que quiere eliminar el punto de conexión.
 
     Eliminar el proceso garantiza que no se cobren los recursos de proceso en la suscripción. Sin embargo, se le cobrará un importe reducido por el almacenamiento de datos, siempre que el área de trabajo de Azure Machine Learning exista en la suscripción. Si ha terminado de explorar Azure Machine Learning, puede eliminar el área de trabajo de Azure Machine Learning y los recursos asociados.
 
 Para eliminar el área de trabajo:
 
-1. En [Azure Portal](https://portal.azure.com?azure-portal=true), en la página **Grupos de recursos**, abra el grupo de recursos que haya especificado al crear el área de trabajo de Azure Machine Learning.
+1. En [Azure Portal](https://portal.azure.com), en la página **Grupos de recursos**, abra el grupo de recursos que haya especificado al crear el área de trabajo de Azure Machine Learning.
 2. Haga clic en **Eliminar grupo de recursos**, escriba el nombre del grupo de recursos para confirmar que quiere eliminarlo y seleccione **Eliminar**.
