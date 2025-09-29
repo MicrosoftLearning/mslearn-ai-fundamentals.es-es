@@ -11,82 +11,82 @@ Supongamos que el minorista ficticio *Northwind Traders* decidió implementar un
 
 Este ejercicio dura aproximadamente **20** minutos.
 
+## Descarga y extracción de archivos de imagen
+
+1. Descargue **[image-analysis.zip](https://aka.ms/mslearn-images-for-analysis)** de `https://aka.ms/mslearn-images-for-analysis`.
+1. Extraiga el archivo .zip descargado en una carpeta del equipo.
+
 ## Creación de un proyecto en el portal de Azure AI Foundry
 
-1. En un explorador web, abre el [Portal de la Fundición de IA de Azure](https://ai.azure.com) en `https://ai.azure.com` e inicia sesión con tus credenciales de Azure. Cierra las sugerencias o paneles de inicio rápido que se abran la primera vez que inicies sesión. 
+1. En un explorador web, abre el [Portal de la Fundición de IA de Azure](https://ai.azure.com) en `https://ai.azure.com` e inicia sesión con tus credenciales de Azure. Cierra las sugerencias o paneles de inicio rápido que se abran la primera vez que inicias sesión y, si es necesario, usa el logotipo de **Fundición de IA de Azure** en la parte superior izquierda para navegar a la página principal, que es similar a la siguiente imagen (cierra el panel **Ayuda** si está abierto):
 
-1. En el explorador, accede a `https://ai.azure.com/managementCenter/allResources` y selecciona **Crear nuevo**. A continuación, elija la opción para crear un **recurso de Centro de IA**.
+    ![Recorte de pantalla de la página principal del Portal de la Fundición de IA de Azure.](./media/ai-foundry-portal.png)
 
-1. En el asistente para *crear un proyecto*, escribe un nombre válido y si se te sugiere un centro existente, selecciona la opción para crear uno *nuevo*. 
+1. Desplácese hasta la parte inferior de la página y seleccione el icono **Explorar los servicios de Azure AI**.
 
-1. Expande *Opciones avanzadas* para especificar los siguientes valores para tu proyecto:
-    - **Suscripción** : su suscripción a Azure.
-    - **Grupo de recursos**: crea o selecciona un grupo de recursos
-    - **Región**: selecciona una de las siguientes ubicaciones:
-        * Este de EE. UU.
-        * Centro de Francia
-        * Centro de Corea del Sur
-        * Oeste de Europa
-        * Oeste de EE. UU.
+    ![Recorte de pantalla del icono "Explorar los servicios de Azure AI".](./media/ai-services.png)
 
-    Seleccione **Crear**. Espera a que se cree el proyecto y el centro. Esto puede tardar unos minutos.
+1. En la página "Servicios de Azure AI", seleccione el icono **Visión y documento**.
 
-1. Cuando se cree el proyecto, se te llevará a la página *Información general* de los detalles del proyecto. Selecciona **Servicios de IA** en el menú de la izquierda. 
+    ![Recorte de pantalla del icono "Vision y documento".](./media/vision-tile.png)
 
-    >*Nota*: Expanda el menú para leer su contenido haciendo clic en el icono "expandir" de arriba. 
+1. En la página **Visión y documento**, examine la pestaña **Imagen** y seleccione el icono **Subtítulación de imágenes**.
 
-1. En la página *Servicios de IA*, selecciona el icono *Visión y documento* para probar las funcionalidades de Visión y documento de Azure AI.
+    ![Recorte de pantalla del icono de subtitulación de imágenes.](./media/image-captioning-tile.png)
 
-    ![Captura de pantalla del icono Vision + Documento de Fundición de IA de Azure.](./media/vision-document-tile.png)
+1. En el panel **Agregar subtítulos a imágenes**, use el botón **Seleccionar un centro** para **crear un centro** con la siguiente configuración:
+    - **Nombre del centro**: *escriba un nombre válido para el centro.*
+    - **Suscripción**: *suscripción a Azure*
+    - **Grupo de recursos**: *crea o selecciona un grupo de recursos*
+    - **Ubicación**: *seleccione una de las siguientes ubicaciones*/*:
+        - Este de EE. UU.
+        - Centro de Francia
+        - Centro de Corea del Sur
+        - Oeste de Europa
+        - Oeste de EE. UU.
+    - **Conexión de los servicios de Azure AI**: *Creación de un nuevo recurso de Servicios de Azure AI con un nombre válido*
+    - **Conectar Búsqueda de Azure AI**: omite la conexión
+
+    \**En el momento de redactar este documento, Visión de Azure AI se admite en centros de conectividad de estas regiones*.
+
+1. Cuando se cree el centro, se le pedirá que cree un proyecto. Escriba un nombre de proyecto adecuado y seleccione **Crear proyecto**.
 
 ## Generación de títulos de imágenes
 
 Vamos a usar la funcionalidad de subtitulación de imágenes de Visión de Azure AI para analizar las imágenes tomadas por una cámara en la tienda de *Northwind Traders*. Los títulos de imágenes están disponibles a través de las características **Título** y **Títulos densos**.
 
-1. En la página *Visión y documento*, desplázate hacia abajo y selecciona **Imagen** en *Ver todas las demás funcionalidades de visión*. A continuación, selecciona el icono **Subtitulación de imágenes**.
+1. En el panel de tareas de la izquierda, seleccione **Servicios de AI**.
 
-    ![Captura de pantalla del icono de subtitulación de imágenes en la sección de imagen de la página Visión y documento.](./media/vision-image-captioning-tile.png)
+    *Ahora debe repetir los pasos que usó anteriormente para volver a la interfaz de subtitulación de imágenes y usar el nuevo proyecto basado en el centro.*
 
-1. En la página **Agregar leyendas a imágenes**, en el menú de selección *Servicios de Azure AI conectados*, observe que se ha seleccionado el recurso de *Servicios de Azure AI* que creó. No deberías tener que realizar ningún cambio. 
+1. En la página **Servicios de AI**, seleccione el icono **Visión y documento**. A continuación, en la página **Visión y documento**, en la pestaña **Imagen**, seleccione el icono **Subtítulos de imágenes**.
 
-    >*Nota*: Si no personalizó una ubicación de recurso válida durante la creación del recurso, es posible que se le pida que cree un nuevo recurso de los servicios de Azure AI que se encuentre en una región válida. Tendrá que crear el nuevo recurso para continuar con el laboratorio.  
+1. En la página **Agregar subtítulos a imágenes**, en el menú de selección *Servicios conectados de Azure AI*, asegúrese de que se haya seleccionado el recurso de servicios de Azure AI que creó en el centro.
 
-1. Descargue **image-analysis.zip** abriendo la dirección URL `https://aka.ms/mslearn-images-for-analysis` en una nueva pestaña del explorador. Al usar la dirección URL se debe descargar automáticamente una carpeta en el equipo. 
-
-1. Vaya a la carpeta *Descargas* del equipo y, a continuación, identifique la carpeta descargada. Haga clic con el botón derecho en la carpeta descargada. Seleccione *Extraer todo...*. A continuación, seleccione *Extraer* para descomprimir su contenido. La carpeta descomprimida aparecerá en la pantalla.  
-
-1. En la carpeta descomprimida, busque el archivo denominado **store-camera-1.jpg**; que contiene la siguiente imagen:
-
-    ![Imagen de un elemento primario que usa la cámara de un teléfono móvil para capturar una imagen de un elemento secundario en una tienda.](./media/analyze-images-vision/store-camera-1.jpg)
-
-1. Cargue la imagen **store-camera-1.jpg** seleccionando *Examinar un archivo*. Puede encontrar la imagen en la carpeta *Descargas* del sistema de archivos.
+1. Use el vínculo **Examinar un archivo** para cargar la imagen **store-camera-1.jpg** de los archivos que descargó y extrajo anteriormente.
 
 1. Observe la descripción generada, visible en el panel **Atributos detectados** de la derecha de la imagen.
 
+    ![Recorte de pantalla de la página "Agregar subtítulos a imágenes" con una imagen analizada.](./media/image-captioning.png)
+
     La funcionalidad **Título** proporciona una sola frase en inglés legible que describe el contenido de la imagen.
 
-1. A continuación, use la misma imagen para poner **Títulos densos**. Vuelve a la página **Visión + documento** seleccionando la flecha *atrás* en la parte superior de la página. En la página *Visión y documento*, selecciona la pestaña **Imagen** y, a continuación, selecciona el icono **Subtitulación densa**.
+1. A continuación, use la misma imagen para poner **Títulos densos**. Vuelva a la página **Visión y documento**; para ello, seleccione la flecha **&larr;** *atrás* en la parte superior de la página y, a continuación, en la página **Visión y documento**, en la pestaña **Imagen**, seleccione el icono **Subtítulos densos**.
 
     La característica **Títulos densos** difiere de la funcionalidad **Títulos**, en la que se proporcionan varios títulos legibles para una imagen: uno que describe el contenido de la imagen y otros, en los que cada uno cubre los objetos esenciales detectados en la imagen. Cada objeto detectado incluye un cuadro de límite, que define las coordenadas de píxel dentro de la imagen asociada al objeto.
 
-1. Mantenga el puntero sobre uno de los títulos de la lista de atributos **Detectados** y observe lo que sucede dentro de la imagen.
+1. Vuelva a cargar la imagen **store-camera-1.jpg** y vea los resultados de los subtítulos densos.
 
-    ![Se muestran la imagen y sus títulos.](./media/analyze-images-vision/dense-captioning.png)
+    ![Recorte de pantalla de los resultados de subtítulos densos.](./media/dense-captioning.png)
 
-    Mueva el cursor del mouse sobre los otros títulos de la lista y observe cómo cambia el rectángulo de selección de la imagen para resaltar la parte de la imagen usada para generar el título.
+    Mantenga el puntero sobre cualquiera de los subtítulos de la lista **Atributos detectados** y observe que se genera un subtítulo para cada objeto detectado en la imagen.
 
 ## Etiquetado de imágenes 
 
 La siguiente característica que probará es la funcionalidad *Extraer etiquetas*. La extracción de etiquetas se basa en miles de objetos reconocibles, incluyendo seres vivos, paisajes y acciones.
 
-1. Vuelve a la página *Visión + Documento* de Fundición de IA de Azure, selecciona la pestaña **Imagen** y selecciona el icono **Extracción de etiquetas comunes**.
-
-1. Abra la carpeta que contenga las imágenes que descargó y busque el archivo denominado **store-image-2.jpg**, que tiene el siguiente aspecto:
-
-    ![Imagen de una persona con una cesta de la compra en un supermercado](./media/analyze-images-vision/store-camera-2.jpg)
-
-1. Cargue el archivo **store-camera-2.jpg**.
-
+1. Vuelva a la página **Visión + documento** seleccionando la flecha **&larr;** *atrás* en la parte superior de la página. A continuación, en la página **Visión y documento**, en la pestaña **Imagen**, seleccione el icono **Extracción de etiquetas comunes**.
+1. Cargue el archivo **store-camera-2.jpg** de la carpeta que extrajo anteriormente.
 1. Revise la lista de etiquetas extraídas de la imagen y la puntuación de confianza de cada una en el panel de atributos detectados. Aquí, la puntuación de confianza es la probabilidad de que el texto del atributo detectado describa lo que realmente está en la imagen. Observe en la lista de etiquetas que incluya no solo objetos, sino acciones, como *comprando*, *vendiendo* y *de pie*.
 
     ![Captura de pantalla del panel Detectar atributos en Studio de Visión con puntuaciones de texto y confianza que se muestran junto a la imagen original.](./media/analyze-images-vision/detect-attributes.png)
@@ -95,26 +95,22 @@ La siguiente característica que probará es la funcionalidad *Extraer etiquetas
 
 En esta tarea, se usa la característica **Detección de objetos** de Análisis de imágenes. Detección de objetos detecta y extrae cuadros de límite basados en miles de objetos reconocibles y seres vivos.
 
-1. Vuelve a la página *Visión + Documento* de Fundición de IA de Azure, selecciona la pestaña **Imagen** y selecciona el icono **Detección de objetos comunes**.
-
-1. Abra la carpeta que contenga las imágenes que descargó y busque el archivo denominado **store-camera-3.jpg**, que tiene el siguiente aspecto:
-
-    ![Imagen de una persona con un carro de la compra](./media/analyze-images-vision/store-camera-3.jpg)
+1. Vuelva a la página **Visión + documento** seleccionando la flecha **&larr;** *atrás* en la parte superior de la página. A continuación, en la pestaña **Imagen**, seleccione el icono **Detección de objetos comunes**.
 
 1. Cargue el archivo **store-camera-3.jpg**.
 
 1. En el cuadro **Atributos detectados**, observe la lista de objetos detectados y sus puntuaciones de confianza.
 
-1. Mantenga el cursor del mouse sobre los objetos de la lista **Atributos detectados** para resaltar el cuadro de límite del objeto en la imagen.
+    ![Recorte de pantalla de los resultados de subtítulos densos.](./media/object-detection.png)
 
-1. Mueva el control deslizante **Valor de umbral** hasta que se muestre un valor de 70 a la derecha del control deslizante. Observe lo que sucede con los objetos de la lista. El control deslizante del umbral especifica que solo se deberían mostrar los objetos identificados con una puntuación de confianza o una probabilidad superior al umbral.
+1. Pruebe a detectar los objetos de la imagen **store-camera-4.jpg**.
 
-## Limpiar
+## Limpieza
 
 Si no tiene previsto realizar más ejercicios, elimine los recursos que ya no necesite. Esto evita la acumulación de costos innecesarios.
 
 1. Abre [Azure Portal]( https://portal.azure.com) y selecciona el grupo de recursos que contenga el recurso que creaste. 
-1. Seleccione el recurso y seleccione **Eliminar** y, después, **Sí** para confirmar. A continuación, se eliminará el recurso.
+1. Seleccione **Eliminar grupo de recursos** y **escriba el nombre del grupo de recursos** para confirmar. El grupo de recursos se elimina.
 
 ## Saber más
 
