@@ -54,7 +54,7 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
 
    **Tipo de tarea y datos**:
     
-    >**NOTA**: Algunas suscripciones tienen permisos que no permiten agregar los datos *bike-data* a *workspaceblobstore*. Si se produce este problema, debe cambiar a una suscripción personal o ajustar los permisos de la suscripción. 
+    >**NOTA**: Algunas suscripciones tienen permisos que no permiten agregar los datos *bike-data* a *workspaceblobstore*. Si se encuentra con este problema, debe cambiar a otra suscripción.
 
     - **Selección del tipo de tarea**: regresión
     - **Seleccione datos**:
