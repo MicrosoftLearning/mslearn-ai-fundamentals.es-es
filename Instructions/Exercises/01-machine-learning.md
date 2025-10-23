@@ -53,6 +53,8 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
     - **Etiquetas**: *ninguna*
 
    **Tipo de tarea y datos**:
+    
+    >**NOTA**: Algunas suscripciones tienen permisos que no permiten agregar los datos *bike-data* a *workspaceblobstore*. Si se encuentra con este problema, debe cambiar a otra suscripción.
 
     - **Selección del tipo de tarea**: regresión
     - **Seleccione datos**:
@@ -69,6 +71,7 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
             - **Selección de MLtable**:
                 - *Descargue y descomprima la [carpeta bike-data](https://aka.ms/bike-rentals) de `https://aka.ms/bike-rentals`.*
                 - **Cargar carpeta**: *Cargue la carpeta **bike-data** extraída, que contiene los archivos de definición de datos y tablas que necesita para el conjunto de datos de entrenamiento.*
+                - **Nota**: *Si se encuentra con un mensaje que indica que para continuar debe omitir la validación de datos, seleccione la opción para omitir la validación de datos.*
         - Seleccione el recurso de datos de **alquiler de bicicletas** recién creado y continúe definiendo el trabajo de ML automatizado en la página siguiente (**Configuración de la tarea**).
 
     **Configuración de la tarea**:
