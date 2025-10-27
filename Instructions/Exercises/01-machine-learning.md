@@ -1,210 +1,194 @@
 ---
 lab:
-  title: Explore el aprendizaje automático automatizado en Azure Machine Learning
+  title: Exploración del aprendizaje automático automatizado
 ---
 
-# Explore el aprendizaje automático automatizado en Azure Machine Learning
+# Exploración del aprendizaje automático automatizado
 
-En este ejercicio, usará la característica de aprendizaje automático automatizado en Azure Machine Learning para entrenar y evaluar un modelo de aprendizaje automático. Después, implementará y probará el modelo entrenado.
+En este ejercicio, usará el aprendizaje automático automatizado para entrenar y evaluar un modelo de aprendizaje automático. Después, implementará y probará el modelo entrenado.
 
-Este ejercicio debería tardar en completarse **35** minutos aproximadamente.
+> **Nota**: Este ejercicio está diseñado para enseñarle los pasos que debe realizar para entrenar y probar un modelo mediante***Azure Machine Learning***. Si tiene una suscripción a Azure con permisos suficientes, puede aprovisionar un área de trabajo de Azure Machine Learning y usarla en el ejercicio. Sin embargo, Azure Machine Learning está diseñado para soluciones de aprendizaje automático de escala empresarial en las que intervienen grandes volúmenes de datos y proceso basado en la nube. Algunas operaciones de Azure Machine Learning requieren aprovisionar el proceso, lo que puede tardar mucho tiempo. Si no tiene acceso a Azure o si tiene que completar el ejercicio en un tiempo determinado, también se proporciona una aplicación***ML Lab*** basada en el explorador. Esta aplicación incluye la funcionalidad principal de Azure ML que se usa en este ejercicio y puede usarla para entrenar y probar modelos de aprendizaje automático reales, como lo haría en Azure ML. Aunque la interfaz de usuario de ML Lab no es*idéntica* a Azure Machine Learning, es lo suficientemente similar como para hacer que la transición a Azure Machine Learning sea intuitiva. Tenga en cuenta que la aplicación ML Lab se ejecuta en el explorador, por lo que si actualiza la página en cualquier momento se reiniciará la aplicación.
 
-## Creación de un área de trabajo de Azure Machine Learning
+Este ejercicio se realiza normalmente en**35** minutos (menos si usa la aplicación ML Lab basada en el explorador).
 
-Para usar Azure Machine Learning, debe aprovisionar un área de trabajo de Azure Machine Learning en su suscripción de Azure. Tras haberlo hecho, podrá usar el Estudio de Azure Machine Learning para trabajar con los recursos del área de trabajo.
+## Creación de un área de trabajo
 
-> **Sugerencia**: si ya tiene un área de trabajo de Azure Machine Learning, puede usarla y pasar a la siguiente tarea.
+Un área de trabajo se usa para mantener todos los recursos de aprendizaje automático juntos, lo que facilita la administración de los datos, el código, los modelos y otros recursos en un solo lugar.
 
-1. Inicie sesión en [Azure Portal](https://portal.azure.com) en `https://portal.azure.com` con las credenciales de Microsoft.
+1. Abra el portal para el entorno que desea usar en este laboratorio e inicie sesión si se le solicita:
+    - [Estudio de Azure Machine Learning](https://ml.azure.com){:target="_blank"} basado en Azure en`https://ml.azure.com`
+    - [ML Lab](https://aka.ms/ml-lab){:target="_blank"} basado en el explorador en`https://aka.ms/ml-lab`
 
-1. Seleccione **+ Crear un recurso**, busque *Machine Learning* y cree un nuevo recurso de **Azure Machine Learning** con la configuración siguiente:
-    - **Suscripción**: *su suscripción a Azure*.
-    - **Grupo de recursos**: *cree o seleccione un grupo de recursos*.
-    - **Nombre**: *escriba un nombre único para el área de trabajo*.
-    - **Región**: Este de EE. UU.
-    - **Cuenta de almacenamiento**: *tenga en cuenta la nueva cuenta de almacenamiento predeterminada que se creará para el área de trabajo*.
-    - **Almacén de claves**: *tenga en cuenta el nuevo almacén de claves predeterminado que se creará para el área de trabajo*.
-    - **Application Insights**: *tenga en cuenta el nuevo recurso de Application Insights predeterminado que se creará para el área de trabajo*.
-    - **Registro de contenedor**: ninguno (*se creará uno automáticamente la primera vez que implemente un modelo en un contenedor*).
+    > **Sugerencia**: Si Estudio de Azure Machine Learning se abre en un área de trabajo existente, vaya a la página**Todas las áreas de trabajo**.
 
-1. Seleccione **Revisar y crear** y, luego, **Crear**. Espere a que se cree el área de trabajo (puede tardar unos minutos) y, a continuación, vaya al recurso implementado.
+1. Cree una nueva área de trabajo con un nombre adecuado.
 
-#### Iniciar Estudio 
+    Si usa Azure Machine Learning, no necesita un*centro* para este ejercicio. Elija la configuración avanzada adecuada en función de las restricciones de directiva de la suscripción de Azure.
 
-1. En el recurso de área de trabajo de Azure Machine Learning, selecciona **Iniciar Studio** (o abre una nueva pestaña del explorador y ve a [https://ml.azure.com](https://ml.azure.com) e inicia sesión en Estudio de Azure Machine Learning con la cuenta de Microsoft). Cierre los mensajes que se muestran.
+1. Una vez creada el área de trabajo, selecciónela para ver su página**principal**.
 
-1. En estudio de Azure Machine Learning, debería ver el área de trabajo recién creada. Si no, selecciona **Todas las áreas de trabajo** en el menú izquierdo y selecciona el área de trabajo que acabas de crear.
+    Tenga en cuenta que el área de trabajo tiene varias páginas, que se muestran en el panel de navegación de la izquierda. Puede expandir y contraer este panel mediante el menú **&#9776;** de la parte superior.
+
+## Descargar datos
+
+En este ejercicio, usará un conjunto de datos de ventas de helados para entrenar un modelo que prediga la demanda de helados en un día determinado, en función de las características estacionales y meteorológicas.
+
+1. En una nueva pestaña del explorador, descargue**[ml-data.zip](https://aka.ms/mslearn-ml-data)** de`https://aka.ms/mslearn-ml-data` a su equipo local.
+1. Extraiga el archivo**ml-data.zip** descargado para ver los archivos que contiene. Tenga en cuenta que uno de estos archivos es**ice-cream.csv**, que contiene los datos de ventas de helados necesarios para este ejercicio.
 
 ## Uso del aprendizaje automático automatizado para entrenar un modelo
 
-El aprendizaje automático automatizado le permite probar varios algoritmos y parámetros para entrenar varios modelos e identificar el que se ajusta mejor a sus datos. En este ejercicio, usará un conjunto de datos de información histórica de alquiler de bicicletas para entrenar un modelo que prediga el número de alquileres de bicicletas que se espera un día determinado, en función de las características estacionales y meteorológicas.
+El aprendizaje automático automatizado le permite probar varios algoritmos y parámetros para entrenar varios modelos e identificar el que se ajusta mejor a sus datos.
 
-> **Cita**: *los datos que se usan en este ejercicio se derivan de [Capital Bikeshare](https://www.capitalbikeshare.com/system-data) y se utilizan de acuerdo con el [contrato de licencia](https://www.capitalbikeshare.com/data-license-agreement) de los datos publicados*.
+1. En el portal, vea la página**ML automatizado** (en**Creación**).
 
-1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), vea la página **ML automatizado** (en **Creación**).
+1. Cree un nuevo trabajo de ML automatizado con la siguiente configuración, usando**Siguiente** cuando sea necesario para avanzar por la interfaz de usuario:
 
-1. Cree un nuevo trabajo de ML automatizado con la siguiente configuración, usando **Siguiente** cuando sea necesario para avanzar por la interfaz de usuario:
+    > **Sugerencia**: Si no se proporciona información explícita para una configuración en los pasos siguientes, use el valor predeterminado.
 
     **Configuración básica**:
 
-    - **Nombre de trabajo**: el campo Nombre de trabajo ya debe estar rellenado previamente con un nombre único. Déjelo como está.
-    - **Nombre del experimento nuevo**: `mslearn-bike-rental`
-    - **Descripción**: `Automated machine learning for bike rental prediction`
-    - **Etiquetas**: *ninguna*
+    - Asigne un**nombre de trabajo** único para el trabajo de aprendizaje automático automatizado
 
    **Tipo de tarea y datos**:
-    
-    >**NOTA**: Algunas suscripciones tienen permisos que no permiten agregar los datos *bike-data* a *workspaceblobstore*. Si se encuentra con este problema, debe cambiar a otra suscripción.
 
-    - **Selección del tipo de tarea**: regresión
-    - **Seleccione datos**:
-        - Cree un nuevo recurso de datos con la siguiente configuración:
-            - **Tipo de datos**:
-                - **Nombre**: `bike-rentals`
-                - **Descripción**: `Historic bike rental data`
-                - **Tipo**: Tabla (mltable)
-            - **Origen de datos**:
-                - Seleccione **Desde archivos locales**
-            - **Tipo de almacenamiento de destino**:
-                - **Tipo de almacén de datos**: Azure Blob Storage
-                - **Nombre**: workspaceblobstore
-            - **Selección de MLtable**:
-                - *Descargue y descomprima la [carpeta bike-data](https://aka.ms/bike-rentals) de `https://aka.ms/bike-rentals`.*
-                - **Cargar carpeta**: *Cargue la carpeta **bike-data** extraída, que contiene los archivos de definición de datos y tablas que necesita para el conjunto de datos de entrenamiento.*
-                - **Nota**: *Si se encuentra con un mensaje que indica que para continuar debe omitir la validación de datos, seleccione la opción para omitir la validación de datos.*
-        - Seleccione el recurso de datos de **alquiler de bicicletas** recién creado y continúe definiendo el trabajo de ML automatizado en la página siguiente (**Configuración de la tarea**).
+    - Establezca el tipo de tarea en**Regresión**.
+    - Cree un nuevo recurso de datos***tabulares*** denominado**ice-cream**.
+        - Cargue el archivo**ice-cream.csv** local en el almacenamiento del área de trabajo predeterminada.
+        - Incluya<u>solo</u> las columnas siguientes (*Date* es única para cada fila y agrega funcionalidad predictiva por sí sola):
+            - **DayOfWeek**
+            - **Month**
+            - **Temperatura**
+            - **Rainfall**
+            - **IceCreamsSold**
+        - Cree el recurso de datos.
+    - Asegúrese de que el recurso de datos**ice-cream** recién creado está seleccionado antes de pasar al paso siguiente.
+
+    > **Nota**: Si va a usar una suscripción de Azure para la que no es administrador, es posible que la directiva no haya permitido el acceso basado en claves al almacenamiento. En este caso, deberá trabajar con el administrador para permitir el acceso basado en claves o volver a configurar el área de trabajo de Azure Machine Learning para usar la autenticación de Entra ID para acceder al almacenamiento. Si no puede hacerlo, use la aplicación***ML Lab*** basada en el explorador para este ejercicio.
 
     **Configuración de la tarea**:
 
-    - **Tipo de tarea**: regresión
-    - **Conjunto de datos**: bike-rentals.
-    - **Columna de destino**: alquileres (entero)
-    - **Opciones de configuración adicionales**:
-        - **Métrica primaria**: NormalizedRootMeanSquaredError
-        - **Explicación del mejor modelo**: *<u>No</u>seleccionado*
-        - **Habilitación del apilamiento de conjuntos**: *<u>No</u>seleccionado*
-        - **Use all supported models** (Usar todos los modelos admitidos): <u>no</u> seleccionado. *Restringirá el trabajo para probar solo algunos algoritmos específicos.*
-        - **Allowed models** (Modelos permitidos): *seleccione solo **RandomForest** y **LightGBM**: normalmente, le gustaría probar tantos como sea posible, pero cada modelo agregado aumenta el tiempo que se tarda en ejecutar el experimento*.
-    - **Límites**: *expanda esta sección*
-        - **Número máximo de pruebas**: `3`
-        - **Número máximo de pruebas simultáneas**: `3`
-        - **Número máximo de nodos**: `3`
-        - **Umbral de puntuación de métrica**: `0.085` (*para que si un modelo logra una puntuación de métrica de raíz del error cuadrático medio normalizado de 0,085 o menos, finalice el trabajo*).
-        - **Tiempo de expiración del experimento**: `15`
-        - **Tiempo de expiración de la iteración**: `15`
-        - **Habilitación de la terminación anticipada**: *seleccionada*
-    - **Validación y prueba**:
-        - **Tipo de validación**: división entre entrenamiento y validación.
-        - **Porcentaje de datos de validación**: 10
-        - **Conjunto de datos de prueba**: ninguno
+    - Establezca la**columna de destino** (la etiqueta que queremos que el modelo prediga) en**IceCreamsSold**.
+    - Establezca**Opciones de configuración adicionales**:
+        - Establezca la**métrica Principal** en la métrica que desea usar para evaluar el rendimiento del modelo. En este ejercicio, use la puntuación de*R<sup>2</sup>*.
+        - Seleccione los algoritmos del modelo que desea probar (o déjelos todos seleccionados).
+    - Establezca la**configuración de ingeniería de características**:
+        - use esta configuración para personalizar la ingeniería de características (cómo se preparan las características de datos para el entrenamiento del modelo)
+    - Establezca**Límites**:
+        - use los límites para finalizar el trabajo de entrenamiento al principio en función de criterios específicos. En este ejercicio, establezca los límites siguientes:
+            - **Umbral de puntuación de métrica**: 0,9
+            - **Tiempo de espera del experimento (minutos)**: 15
+        
+        > **Nota** Es importante establecer estos límites al usar Azure Machine Learning, ya que la ejecución de trabajos de entrenamiento para cada posible algoritmo y combinación de ingeniería de características podría tardar horas.
 
     **Proceso:**
 
-    - **Selección del tipo de proceso**: sin servidor
-    - **Tipo de máquina virtual**: CPU
-    - **Nivel de máquina virtual**: dedicado
-    - **Tamaño de la máquina virtual**: Standard_DS3_V2\*
-    - **Número de instancias**: 1
+    - Usar el proceso**sin servidor**
 
-    \* *Si la suscripción restringe los tamaños de máquina virtual disponibles, elija cualquier tamaño disponible.*
+    **Revisar**
 
-1. Envíe el trabajo de entrenamiento. Se inicia automáticamente.
+    - Revise la configuración y compruébela cuidadosamente. A continuación, envíe el trabajo de entrenamiento. Se inicia automáticamente.
 
-1. espere a que el trabajo finalice. Este proceso puede tardar un poco. Ahora podría ser un buen momento para hacer una pausa.
+1. espere a que el trabajo finalice.
+
+    > **Sugerencia**: Si usa Azure Machine Learning, es posible que tarde un rato; ahora podría ser un buen momento para hacer una pausa.
 
 ## Revisión del mejor modelo
 
 Una vez completado el trabajo de aprendizaje automático automatizado, puede revisar el mejor modelo que haya entrenado.
 
-1. En la pestaña **Visión general** de la ejecución del aprendizaje automático automatizado, tenga en cuenta el resumen del mejor modelo.
-    ![Captura de pantalla del mejor resumen del modelo del trabajo de aprendizaje automático automatizado con un cuadro alrededor del nombre del algoritmo.](./media/use-automated-machine-learning/complete-run.png)
+1. En la pestaña**Información general** de la página de detalles del trabajo, vea la información sobre el trabajo y anote el mejor resumen del modelo.
   
-1. Seleccione el texto bajo **Nombre del algoritmo** para el mejor modelo a fin de ver sus detalles.
-
-1. Seleccione la pestaña **Métricas** y seleccione los gráficos **valores residuales** y **predicted_true** si aún no están seleccionados.
-
-    Revise los gráficos en los que se muestran el rendimiento del modelo. En el gráfico de **valores residuales** se muestran los *valores residuales* (las diferencias entre los valores predichos y reales) como un histograma. El gráfico de **predicted_true** compara los valores previstos con los valores True.
+1. Seleccione el**Nombre del algoritmo** para el mejor modelo a fin de ver sus detalles. A continuación, en la página de detalles del trabajo secundario, vea las pestañas siguientes:
+    - **Información general**: Detalles generales del trabajo secundario.
+    - **Modelo**: Información sobre el modelo que se entrenó.
+    - **Métricas**: métricas de evaluación y visualizaciones para el modelo en función de los datos de prueba utilizados durante el proceso de entrenamiento.
+    - **Salidas y registros**: información registrada durante el proceso de entrenamiento.
 
 ## Implementación y prueba del modelo
 
-1. En la pestaña **Modelo** del mejor modelo entrenado por el trabajo de aprendizaje automático automatizado, seleccione **Implementar** y use la opción **Punto de conexión en tiempo real** para implementar el modelo con los valores siguientes:
-    - **Máquina virtual**: Standard_DS3_v2
-    - **Recuento de instancias**: 3
-    - **Punto de conexión**: Nuevo
-    - **Nombre del punto de conexión**: *Deje el valor predeterminado o asegúrese de que es único globalmente*
-    - **Nombre de implementación**: *Deje el valor predeterminado*
-    - **Recopilación de datos de inferencia**: *Deshabilitado*
-    - **Empaquetado del modelo**: *Deshabilitado*
+1. En la pestaña**Modelo** del mejor modelo entrenado por el trabajo de aprendizaje automático automatizado, seleccione**Implementar** para implementar el modelo en un punto de conexión en tiempo real.
 
-    > **Nota** Si recibe un mensaje que indica que no hay suficiente cuota para seleccionar la máquina virtual *Standard_DS3_v2*, selecciona una diferente.
+    Seleccione las opciones**Instancias** y**Máquina virtual** adecuadas para el proceso en el que se ejecutará el punto de conexión implementado (que puede depender de la cuota disponible en la suscripción de Azure) y asigne los nombres de**punto de conexión** e**implementación** adecuados.
 
-1. Espere a que se inicie la implementación; esto puede tardar unos segundos. El **estado de implementación** del punto de conexión se indicará en la parte principal de la página como *En ejecución*.
-1. Espere a que el **estado de implementación** cambie a *Realizado correctamente*. Esto podría tardar de 5 a 10 minutos.
+1. Espere a que aparezca una notificación de que se ha completado la implementación.
+
+    > **Sugerencia**: En Estudio de Azure Machine Learning, la implementación de puntos de conexión puede tardar entre 5 y 10 minutos.
 
 ## Prueba del modelo implementado
 
 Ahora puede probar el servicio implementado.
 
-1. En Estudio de Azure Machine Learning, en el menú de la izquierda, seleccione **Puntos de conexión** y abra el punto de conexión en tiempo real que ha creado.
+1. En el menú de navegación, seleccione la página**Puntos de conexión** y abra el punto de conexión en tiempo real que creó.
 
-1. En la página punto de conexión en tiempo real, vea la pestaña **Prueba**.
+1. En la página del punto de conexión, vea la pestaña**Prueba**.
 
-1. En el **panel de datos de entrada para evaluar el punto de conexión**, reemplace la plantilla JSON por los datos de entrada siguientes:
+1. En el**panel de datos de entrada para evaluar el punto de conexión**, reemplace la plantilla JSON por los datos de entrada siguientes:
 
     ```json
-      {
+   {
      "input_data": {
-       "columns": [
-         "day",
-         "mnth",
-         "year",
-         "season",
-         "holiday",
-         "weekday",
-         "workingday",
-         "weathersit",
-         "temp",
-         "atemp",
-         "hum",
-         "windspeed"
-       ],
-       "index": [0],
-       "data": [[1,1,2022,2,0,1,1,2,0.3,0.3,0.3,0.3]]
+        "columns": [
+            "DayOfWeek",
+            "Month",
+            "Temperature",
+            "Rainfall"
+        ],
+        "index": [0],
+        "data": [["Wednesday","June",70.5,0.05]]
      }
-    }
-
+   }
     ```
 
-1. Haga clic en el botón **Probar**.
+1. Haga clic en el botón**Probar**.
 
 1. Revise los resultados de la prueba, que incluyen un número previsto de alquileres en función de las características de entrada similar a lo siguiente:
 
     ```JSON
-    [
-      352.3564674945718
-    ]
+   [
+       120.16208168753236
+   ]
     ```
 
     El panel de prueba tomó los datos de entrada y utilizó el modelo entrenado para devolver el número de alquileres previsto.
 
-## Visualización del código para consumir el servicio
+## Visualización del código para consumir el modelo
 
-Ahora que tiene un punto de conexión de servicio predictivo, los desarrolladores pueden compilar aplicaciones que la consuman.
+Ahora que tiene un modelo predictivo, los desarrolladores pueden crear aplicaciones que lo consuman.
 
-1. En la página punto de conexión en tiempo real, vea la pestaña **Consumir**.
-1. Revise el código de ejemplo para consumir el punto de conexión, que se proporciona para varios lenguajes de programación.
+1. En la página punto de conexión en tiempo real, vea la pestaña**Consumir**.
+1. Revise el código de ejemplo para consumir el modelo.
 
-Revisemos lo que ha hecho. Ha usado un conjunto de datos históricos de alquiler de bicicletas para entrenar un modelo. El modelo predice el número de alquileres de bicicletas que se espera en un día determinado, en función de las *características* estacionales y meteorológicas. Por último, ha probado el modelo y ha revisado el código que un desarrollador puede usar para compilar una aplicación para consumirlo.
+## Si el tiempo lo permite
+
+Si desea experimentar más con el aprendizaje automático automatizado, pruebe a entrenar un modelo de**clasificación** basado en el archivo**penguins.csv** que se incluyó en el archivo de**ml-data.zip** que descargó anteriormente. Use todas las columnas de este conjunto de datos.
+
+Después de entrenar e implementar un modelo de clasificación, puede probarlo en el punto de conexión con el siguiente código JSON:
+
+```json
+{
+    "input_data": {
+    "columns": [
+        "CulmenLength",
+        "CulmenDepth",
+        "FlipperLength",
+        "BodyMass"
+    ],
+    "index": [0],
+    "data": [[45.2,13.8,215,4750]]
+    }
+}
+```
 
 ## Limpieza
 
-El servicio web que se ha creado se hospeda en una *instancia de Azure Container*. Si no tiene previsto experimentar con él, debe eliminar el punto de conexión para evitar el uso innecesario de Azure.
+Si ha usado Azure Machine Learning para completar este ejercicio, debe eliminar los recursos que ha creado para evitar el uso innecesario de Azure.
 
-1. En [Estudio de Azure Machine Learning](https://ml.azure.com), en la pestaña **Puntos de conexión**, seleccione el punto de conexión que ha implementado. A continuación, seleccione **Eliminar** y confirme que quiere eliminar el punto de conexión.
+1. En[Estudio de Azure Machine Learning](https://ml.azure.com), en la pestaña**Puntos de conexión**, seleccione el punto de conexión que ha implementado. A continuación, seleccione**Eliminar** y confirme que quiere eliminar el punto de conexión.
 
     Eliminar el proceso garantiza que no se cobren los recursos de proceso en la suscripción. Sin embargo, se le cobrará un importe reducido por el almacenamiento de datos, siempre que el área de trabajo de Azure Machine Learning exista en la suscripción. Si ha terminado de explorar Azure Machine Learning, puede eliminar el área de trabajo de Azure Machine Learning y los recursos asociados.
 
 Para eliminar el área de trabajo:
 
-1. En [Azure Portal](https://portal.azure.com), en la página **Grupos de recursos**, abra el grupo de recursos que haya especificado al crear el área de trabajo de Azure Machine Learning.
-2. Haga clic en **Eliminar grupo de recursos**, escriba el nombre del grupo de recursos para confirmar que quiere eliminarlo y seleccione **Eliminar**.
+1. En[Azure Portal](https://portal.azure.com), en la página**Grupos de recursos**, abra el grupo de recursos que haya especificado al crear el área de trabajo de Azure Machine Learning.
+2. Haga clic en**Eliminar grupo de recursos**, escriba el nombre del grupo de recursos para confirmar que quiere eliminarlo y seleccione**Eliminar**.
